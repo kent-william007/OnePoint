@@ -12,8 +12,20 @@
 		370567D91F3EE2B800AB022C /* XJRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 370567D81F3EE2B800AB022C /* XJRecommendViewController.m */; };
 		370D71111F45C2AA00C137D2 /* DestinationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 370D71101F45C2AA00C137D2 /* DestinationModel.m */; };
 		371647661F41A10500828335 /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 371647651F41A10500828335 /* UIButton+EnlargeTouchArea.m */; };
+		372DE0741F4BD87D00F52D1D /* XJRecommendViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 372DE0731F4BD87D00F52D1D /* XJRecommendViewCell.m */; };
 		3748ACF11F43175B00AA9183 /* XJMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3748ACF01F43175B00AA9183 /* XJMainTableViewCell.m */; };
 		3765F0261F3EDC9E00EC9C61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3765F0251F3EDC9E00EC9C61 /* Images.xcassets */; };
+		3792FDC41F525F0A00DE9078 /* XJRecommendSectionTItle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3792FDC31F525F0A00DE9078 /* XJRecommendSectionTItle.m */; };
+		3792FDC71F526A5200DE9078 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3792FDC61F526A5200DE9078 /* UIButton+Extension.m */; };
+		3792FDC91F52ACC300DE9078 /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 3792FDC81F52ACC300DE9078 /* arrow_left.png */; };
+		3792FDCC1F530B5A00DE9078 /* XJSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3792FDCB1F530B5A00DE9078 /* XJSongViewController.m */; };
+		379BE61C1F47F083001826BB /* XJMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379BE61B1F47F083001826BB /* XJMyViewController.m */; };
+		379BE61F1F47F0C8001826BB /* XJMLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379BE61E1F47F0C8001826BB /* XJMLibraryViewController.m */; };
+		379BE6221F47F16F001826BB /* XJMiddleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379BE6211F47F16F001826BB /* XJMiddleViewController.m */; };
+		379BE6251F47F516001826BB /* XJNavigaterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 379BE6241F47F516001826BB /* XJNavigaterView.m */; };
+		379BE6281F481096001826BB /* XJBGCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 379BE6271F481096001826BB /* XJBGCollectionViewCell.m */; };
+		379BE62B1F486812001826BB /* MoreContentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 379BE62A1F486812001826BB /* MoreContentViewModel.m */; };
+		379BE62E1F486A1B001826BB /* ContentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 379BE62D1F486A1B001826BB /* ContentsModel.m */; };
 		37A9BF481F42D13B00297BC1 /* XJNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A9BF471F42D13B00297BC1 /* XJNetManager.m */; };
 		37A9BF4B1F42D43700297BC1 /* XJMoreNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A9BF4A1F42D43700297BC1 /* XJMoreNetManager.m */; };
 		37A9BF521F42D79700297BC1 /* NewCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A9BF511F42D79700297BC1 /* NewCategoryModel.m */; };
@@ -43,9 +55,32 @@
 		370D71101F45C2AA00C137D2 /* DestinationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationModel.m; sourceTree = "<group>"; };
 		371647641F41A10500828335 /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
 		371647651F41A10500828335 /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
+		372DE0721F4BD87D00F52D1D /* XJRecommendViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRecommendViewCell.h; sourceTree = "<group>"; };
+		372DE0731F4BD87D00F52D1D /* XJRecommendViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRecommendViewCell.m; sourceTree = "<group>"; };
 		3748ACEF1F43175B00AA9183 /* XJMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJMainTableViewCell.h; sourceTree = "<group>"; };
 		3748ACF01F43175B00AA9183 /* XJMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJMainTableViewCell.m; sourceTree = "<group>"; };
 		3765F0251F3EDC9E00EC9C61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3792FDC21F525F0A00DE9078 /* XJRecommendSectionTItle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRecommendSectionTItle.h; sourceTree = "<group>"; };
+		3792FDC31F525F0A00DE9078 /* XJRecommendSectionTItle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRecommendSectionTItle.m; sourceTree = "<group>"; };
+		3792FDC51F526A5200DE9078 /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		3792FDC61F526A5200DE9078 /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
+		3792FDC81F52ACC300DE9078 /* arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left.png; sourceTree = "<group>"; };
+		3792FDCA1F530B5A00DE9078 /* XJSongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJSongViewController.h; sourceTree = "<group>"; };
+		3792FDCB1F530B5A00DE9078 /* XJSongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJSongViewController.m; sourceTree = "<group>"; };
+		379BE61A1F47F083001826BB /* XJMyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJMyViewController.h; sourceTree = "<group>"; };
+		379BE61B1F47F083001826BB /* XJMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJMyViewController.m; sourceTree = "<group>"; };
+		379BE61D1F47F0C8001826BB /* XJMLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJMLibraryViewController.h; sourceTree = "<group>"; };
+		379BE61E1F47F0C8001826BB /* XJMLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJMLibraryViewController.m; sourceTree = "<group>"; };
+		379BE6201F47F16F001826BB /* XJMiddleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJMiddleViewController.h; sourceTree = "<group>"; };
+		379BE6211F47F16F001826BB /* XJMiddleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJMiddleViewController.m; sourceTree = "<group>"; };
+		379BE6231F47F516001826BB /* XJNavigaterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJNavigaterView.h; sourceTree = "<group>"; };
+		379BE6241F47F516001826BB /* XJNavigaterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJNavigaterView.m; sourceTree = "<group>"; };
+		379BE6261F481096001826BB /* XJBGCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJBGCollectionViewCell.h; sourceTree = "<group>"; };
+		379BE6271F481096001826BB /* XJBGCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJBGCollectionViewCell.m; sourceTree = "<group>"; };
+		379BE6291F486812001826BB /* MoreContentViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreContentViewModel.h; sourceTree = "<group>"; };
+		379BE62A1F486812001826BB /* MoreContentViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreContentViewModel.m; sourceTree = "<group>"; };
+		379BE62C1F486A1B001826BB /* ContentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentsModel.h; sourceTree = "<group>"; };
+		379BE62D1F486A1B001826BB /* ContentsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentsModel.m; sourceTree = "<group>"; };
 		37A9BF461F42D13B00297BC1 /* XJNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJNetManager.h; sourceTree = "<group>"; };
 		37A9BF471F42D13B00297BC1 /* XJNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJNetManager.m; sourceTree = "<group>"; };
 		37A9BF491F42D43700297BC1 /* XJMoreNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJMoreNetManager.h; sourceTree = "<group>"; };
@@ -105,6 +140,10 @@
 			children = (
 				3748ACEF1F43175B00AA9183 /* XJMainTableViewCell.h */,
 				3748ACF01F43175B00AA9183 /* XJMainTableViewCell.m */,
+				372DE0721F4BD87D00F52D1D /* XJRecommendViewCell.h */,
+				372DE0731F4BD87D00F52D1D /* XJRecommendViewCell.m */,
+				3792FDC21F525F0A00DE9078 /* XJRecommendSectionTItle.h */,
+				3792FDC31F525F0A00DE9078 /* XJRecommendSectionTItle.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +172,10 @@
 			children = (
 				370567D71F3EE2B800AB022C /* XJRecommendViewController.h */,
 				370567D81F3EE2B800AB022C /* XJRecommendViewController.m */,
+				3792FDCA1F530B5A00DE9078 /* XJSongViewController.h */,
+				3792FDCB1F530B5A00DE9078 /* XJSongViewController.m */,
+				379BE6201F47F16F001826BB /* XJMiddleViewController.h */,
+				379BE6211F47F16F001826BB /* XJMiddleViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -140,6 +183,10 @@
 		370567CA1F3EE1CC00AB022C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				379BE6231F47F516001826BB /* XJNavigaterView.h */,
+				379BE6241F47F516001826BB /* XJNavigaterView.m */,
+				379BE6261F481096001826BB /* XJBGCollectionViewCell.h */,
+				379BE6271F481096001826BB /* XJBGCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,6 +202,8 @@
 		370567CC1F3EE1D300AB022C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				379BE61A1F47F083001826BB /* XJMyViewController.h */,
+				379BE61B1F47F083001826BB /* XJMyViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -199,6 +248,15 @@
 			path = NetManager;
 			sourceTree = "<group>";
 		};
+		379BE6191F47EFF2001826BB /* 乐库 */ = {
+			isa = PBXGroup;
+			children = (
+				379BE61D1F47F0C8001826BB /* XJMLibraryViewController.h */,
+				379BE61E1F47F0C8001826BB /* XJMLibraryViewController.m */,
+			);
+			path = "乐库";
+			sourceTree = "<group>";
+		};
 		37A9BF4C1F42D62D00297BC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +268,10 @@
 				37AA161B1F44240B00A81F1C /* TracksViewModel.m */,
 				370D710F1F45C2AA00C137D2 /* DestinationModel.h */,
 				370D71101F45C2AA00C137D2 /* DestinationModel.m */,
+				379BE6291F486812001826BB /* MoreContentViewModel.h */,
+				379BE62A1F486812001826BB /* MoreContentViewModel.m */,
+				379BE62C1F486A1B001826BB /* ContentsModel.h */,
+				379BE62D1F486A1B001826BB /* ContentsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,6 +297,7 @@
 		37AC39531F3DA0DB00A6A50F = {
 			isa = PBXGroup;
 			children = (
+				3792FDC81F52ACC300DE9078 /* arrow_left.png */,
 				37AC395E1F3DA0DB00A6A50F /* music */,
 				37AC395D1F3DA0DB00A6A50F /* Products */,
 				44A8CCF934C5D9D724B035A7 /* Pods */,
@@ -258,6 +321,7 @@
 				370567CB1F3EE1D300AB022C /* 我的 */,
 				370567C81F3EE1CC00AB022C /* 推荐 */,
 				370567C51F3EE1C500AB022C /* 首页 */,
+				379BE6191F47EFF2001826BB /* 乐库 */,
 				37AC39621F3DA0DB00A6A50F /* AppDelegate.h */,
 				37AC39631F3DA0DB00A6A50F /* AppDelegate.m */,
 				37AC39651F3DA0DB00A6A50F /* ViewController.h */,
@@ -295,6 +359,8 @@
 				371647651F41A10500828335 /* UIButton+EnlargeTouchArea.m */,
 				37ADB7371F3EED260063F493 /* UIView+Extension.h */,
 				37ADB7381F3EED260063F493 /* UIView+Extension.m */,
+				3792FDC51F526A5200DE9078 /* UIButton+Extension.h */,
+				3792FDC61F526A5200DE9078 /* UIButton+Extension.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -378,6 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3792FDC91F52ACC300DE9078 /* arrow_left.png in Resources */,
 				3765F0261F3EDC9E00EC9C61 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,24 +504,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				379BE61F1F47F0C8001826BB /* XJMLibraryViewController.m in Sources */,
 				37AC39671F3DA0DB00A6A50F /* ViewController.m in Sources */,
 				37A9BF561F42E22000297BC1 /* BaseViewModel.m in Sources */,
+				3792FDC41F525F0A00DE9078 /* XJRecommendSectionTItle.m in Sources */,
+				379BE61C1F47F083001826BB /* XJMyViewController.m in Sources */,
 				370567D91F3EE2B800AB022C /* XJRecommendViewController.m in Sources */,
 				37D84D6C1F429899005083B2 /* XJPlayView.m in Sources */,
 				370567D31F3EE25400AB022C /* XJTabBarController.m in Sources */,
+				379BE6221F47F16F001826BB /* XJMiddleViewController.m in Sources */,
 				37ADB7341F3EE9940063F493 /* XJPlayTabbar.m in Sources */,
+				3792FDC71F526A5200DE9078 /* UIButton+Extension.m in Sources */,
 				37A9BF521F42D79700297BC1 /* NewCategoryModel.m in Sources */,
 				37AC39641F3DA0DB00A6A50F /* AppDelegate.m in Sources */,
 				37AC39611F3DA0DB00A6A50F /* main.m in Sources */,
 				37ADB7391F3EED260063F493 /* UIView+Extension.m in Sources */,
+				379BE6281F481096001826BB /* XJBGCollectionViewCell.m in Sources */,
 				37AA16191F43DCE400A81F1C /* XJPLayManager.m in Sources */,
 				3748ACF11F43175B00AA9183 /* XJMainTableViewCell.m in Sources */,
 				37A9BF4B1F42D43700297BC1 /* XJMoreNetManager.m in Sources */,
+				3792FDCC1F530B5A00DE9078 /* XJSongViewController.m in Sources */,
+				372DE0741F4BD87D00F52D1D /* XJRecommendViewCell.m in Sources */,
 				370D71111F45C2AA00C137D2 /* DestinationModel.m in Sources */,
 				37A9BF591F42E25900297BC1 /* NewContentViewModel.m in Sources */,
 				37AA161C1F44240B00A81F1C /* TracksViewModel.m in Sources */,
 				370567D61F3EE27000AB022C /* XJMainViewController.m in Sources */,
 				371647661F41A10500828335 /* UIButton+EnlargeTouchArea.m in Sources */,
+				379BE6251F47F516001826BB /* XJNavigaterView.m in Sources */,
+				379BE62E1F486A1B001826BB /* ContentsModel.m in Sources */,
+				379BE62B1F486812001826BB /* MoreContentViewModel.m in Sources */,
 				37A9BF481F42D13B00297BC1 /* XJNetManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

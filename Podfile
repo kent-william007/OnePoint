@@ -13,5 +13,6 @@ target 'music' do
  pod 'MJRefresh'
  pod 'Masonry'
  pod 'WebViewJavascriptBridge'
+ pod 'SDCycleScrollView'
 end
 

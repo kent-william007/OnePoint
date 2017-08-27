@@ -12,6 +12,7 @@
 - (instancetype)initWithAlbumId:(NSInteger)albumId title:(NSString *)title isAsc:(BOOL)asc;
 - (void)getItemModelData:(void(^)(NSError * error))completed;
 - (NSURL *)playURLForRow:(NSInteger)indexPathRow;
+- (NSURL *)coverURLForRow:(NSInteger)indexPathRow;
 
 @property(nonatomic)NSInteger albumId;
 @property(nonatomic,copy)NSString *title;

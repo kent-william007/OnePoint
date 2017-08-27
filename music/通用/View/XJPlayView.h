@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface XJPlayView : UIView
+@property(nonatomic,strong)UIButton *playBun;
+@property(nonatomic,strong)UIImageView *loopImage;
 
+- (void)setPlayButtonView;
+- (void)setPauseButtonView;
 @end

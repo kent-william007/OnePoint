@@ -35,8 +35,16 @@
 - (NSInteger)rowNumber{
         return self.model.tracks.list.count;
 }
+
+/**音乐URL*/
 - (NSURL *)playURLForRow:(NSInteger)indexPathRow{
     NSString *path = self.model.tracks.list[indexPathRow].playUrl64;
+    return [NSURL URLWithString:path];
+}
+
+/**专辑小图标*/
+- (NSURL *)coverURLForRow:(NSInteger)indexPathRow{
+    NSString *path = self.model.tracks.list[indexPathRow].coverSmall;
     return [NSURL URLWithString:path];
 }
 @end

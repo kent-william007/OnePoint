@@ -10,7 +10,5 @@
 #define PrefixHeader_pch
 #import "Masonry.h"
 #import "UIImageView+WebCache.h"
-#define ABC @"abc"
-
 
 #endif /* PrefixHeader_pch */

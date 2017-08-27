@@ -10,10 +10,12 @@
 #import "NewCategoryModel.h"
 #import "MJExtension.h"
 #import "DestinationModel.h"
+#import "ContentsModel.h"
 
 #define kURLVersion @"version":@"4.3.26.2"
 #define kURLDevice @"device":@"ios"
 #define kURLPosition @"position":@1
+#define KURLScale @"scale":@2
 
 @implementation XJMoreNetManager
 
@@ -39,4 +41,14 @@
         completed([DestinationModel mj_objectWithKeyValues:responseObject],nil);
     }];
 }
+
+/**获取推荐音乐*/
++ (id)getContentsForCategoryId:(NSInteger)categoryID contentType:(NSString *)type completionHandle:(void(^)(id responseObject,NSError *error))completed{
+    
+    NSDictionary *params = @{@"categoryId":@(categoryID),@"contentType":type,kURLDevice,KURLScale,kURLVersion};
+    return [self GET:@"http://mobile.ximalaya.com/mobile/discovery/v2/category/recommends" paramaters:params complationHandle:^(id responseObject, NSError *error) {
+        completed([ContentsModel mj_objectWithKeyValues:responseObject],nil);
+    }];
+}
+
 @end

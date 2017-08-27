@@ -11,4 +11,5 @@
 @interface XJMoreNetManager : XJNetManager
 + (id)getTracksForMuisc:(NSInteger)modelId completionHandle:(void(^)(id responseObject,NSError *error))completed;
 + (id)getTracksForAlbumId:(NSInteger)albumId mainTitle:(NSString *)title idAsc:(BOOL)isAsc completionHandle:(void(^)(id responseObject,NSError *error))completed;
++ (id)getContentsForCategoryId:(NSInteger)categoryID contentType:(NSString *)type completionHandle:(void(^)(id responseObject,NSError *error))completed;
 @end

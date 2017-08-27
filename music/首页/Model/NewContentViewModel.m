@@ -13,7 +13,6 @@
 
 @interface NewContentViewModel()
 @property (nonatomic,strong)NewCategoryModel *model;
-@property (nonatomic,strong)DestinationModel *d_model;
 @end
 
 @implementation NewContentViewModel
@@ -29,13 +28,6 @@
           self.model = responseObject;
       }
       completed(error);
-    }];
-}
-
-- (void)getAlbumIdData:(NSInteger)albumId title:(NSString*)title  CompletionHandle:(void(^)(NSError *))completed{
-    self.dataTask = [XJMoreNetManager getTracksForAlbumId:albumId mainTitle:title idAsc:YES completionHandle:^(id responseObject, NSError *error) {
-        NSLog(@"%@",responseObject);
-        self.d_model = responseObject;
     }];
 }
 
@@ -82,5 +74,10 @@
     NSURL *url = [[NSURL alloc]initWithString:self.model.list[row].weburl];
     return url;
 }
-
+- (BOOL)playStatus:(NSInteger)row{
+    return self.model.list[row].play;
+}
+- (void)setPlay:(NSInteger)row status:(BOOL)isPlay{
+    self.model.list[row].play = isPlay;
+}
 @end

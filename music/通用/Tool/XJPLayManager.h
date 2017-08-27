@@ -15,6 +15,6 @@
 @property(nonatomic,strong)AVPlayer *player;
 
 + (instancetype)sharedInstance;
-- (void)pauseMusic:(NSString *)urlString;
+- (void)pauseMusic;
 - (void)playWithModel:(TracksViewModel *)tracks indexPathRow:(NSInteger ) indexPathRow;
 @end

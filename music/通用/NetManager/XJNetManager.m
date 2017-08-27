@@ -23,9 +23,23 @@
 + (id)GET:(NSString *)path paramaters:(NSDictionary *)params complationHandle:(void (^)(id, NSError *))completed{
    return [[self defaultManager] GET:path parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
        completed(responseObject,nil);
+       [self dictionaryToJson:responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
        completed(nil,error);
     }];
 }
+
+/**将dic转为json的方法*/
++ (NSString*)dictionaryToJson:(NSDictionary *)dic
+{
+    NSError *parseError = nil;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+    NSString *abc = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",abc);
+    return abc;
+    
+}
+
 
 @end

@@ -16,17 +16,23 @@
 @interface XJMainViewController ()<UITableViewDelegate,UITableViewDataSource,XJMainTableViewDelegate>
 @property(nonatomic,strong)NewContentViewModel *contentVM;
 @property(nonatomic,strong)UITableView *mainTableView;
+@property(nonatomic)NSInteger oldeTagIndex;//记录被点击的按钮
+@property(nonatomic)BOOL firstClick;
 @end
 
 @implementation XJMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _firstClick = YES;
+    _oldeTagIndex = -1;
+    
     self.view.backgroundColor = [UIColor orangeColor];
     [self initMainTableView];
-   [self.contentVM getDataCompletionHandle:^(NSError *error) {
+    [self.contentVM getDataCompletionHandle:^(NSError *error) {
        [self.mainTableView reloadData];
-   }];
+    }];
 }
 
 - (void)initMainTableView{
@@ -66,15 +72,41 @@
     cell.tagInt = indexPath.section;
     cell.titleLb.text = [self.contentVM trackTitleForRow:indexPath.section];
     cell.delegate = self;
-   [cell buttonClickBlock:^(NSInteger *m_index) {
+    cell.isPlay = [self.contentVM playStatus:indexPath.section];//刷新播放按钮
+    [cell buttonClickBlock:^(NSInteger *m_index) {
        NSLog(@"%li",(long)m_index);
-   }];
-    
+    }];
     return cell;
 }
 
 - (void)mainTableViewDidClick:(NSInteger)tag{
     
+    NSArray *indexPaths;
+    BOOL playStatus = [self.contentVM playStatus:tag];
+    [self.contentVM setPlay:tag status:!playStatus];
+    if (_firstClick) {//第一次点击
+        NSIndexPath * indexP = [NSIndexPath indexPathForRow:0 inSection:tag];
+        indexPaths = @[indexP];
+        _oldeTagIndex = tag;
+        _firstClick = NO;
+        [self loadMusicWithTag:tag];
+    }else if(_oldeTagIndex == tag){//再次点击
+        NSIndexPath * indexP = [NSIndexPath indexPathForRow:0 inSection:tag];
+        indexPaths = @[indexP];
+        [[XJPLayManager sharedInstance] pauseMusic];
+    }else{//点击其他的，暂停当前的
+        [self.contentVM setPlay:_oldeTagIndex status:NO];
+        NSIndexPath * o_indexP = [NSIndexPath indexPathForRow:0 inSection:_oldeTagIndex];
+        NSIndexPath * indexP = [NSIndexPath indexPathForRow:0 inSection:tag];
+        indexPaths = @[o_indexP,indexP];
+        _oldeTagIndex = tag;
+        [self loadMusicWithTag:tag];
+    }
+     [_mainTableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+
+}
+/**第一次点击／点击其他 都需要重新加载数据*/
+- (void)loadMusicWithTag:(NSInteger)tag{
     TracksViewModel *tracksVM = [[TracksViewModel alloc]initWithAlbumId:[self.contentVM albumIdForRow:tag] title:[self.contentVM titleForRow:tag] isAsc:YES];
     
     [tracksVM getItemModelData:^(NSError *error) {
@@ -82,9 +114,11 @@
         userInfo[@"musicURL"] = [tracksVM playURLForRow:tag];
         userInfo[@"indexPathRow"] = @(tag);
         userInfo[@"theSong"] = tracksVM;
+        userInfo[@"coverURL"] = [tracksVM coverURLForRow:tag];
         [[NSNotificationCenter defaultCenter]postNotificationName:@"StartPlay" object:nil userInfo:[userInfo copy]];
     }];
 }
+
 
 - (NewContentViewModel *)contentVM{
     if (!_contentVM) {

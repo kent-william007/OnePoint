@@ -31,4 +31,10 @@
 
 - (NSURL *)urlForRow:(NSInteger)row;
 
+//首页播放按钮状态
+- (BOOL)playStatus:(NSInteger)row;
+
+//改变首页播放按钮状态
+- (void)setPlay:(NSInteger)row status:(BOOL)isPlay;
+
 @end

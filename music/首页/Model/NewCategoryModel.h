@@ -75,4 +75,6 @@
 
 @property (nonatomic, assign) NSInteger tracksCounts;
 
+@property(nonatomic)BOOL play;//播放状态
+
 @end

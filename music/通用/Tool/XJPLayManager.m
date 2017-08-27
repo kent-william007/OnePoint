@@ -7,6 +7,8 @@
 //
 
 #import "XJPLayManager.h"
+#import "TracksViewModel.h"
+
 @interface XJPLayManager()
 @property (nonatomic, strong) AVPlayerItem   *currentPlayerItem;
 @property (nonatomic,strong) TracksViewModel *tracksVM;
@@ -23,12 +25,20 @@
     });
     return manager;
 }
-- (void)pauseMusic:(NSString *)urlString{
-    NSURL *url = [NSURL URLWithString:urlString];
-    _currentPlayerItem = [[AVPlayerItem alloc]initWithURL:url];
-    _player = [[AVPlayer alloc]initWithPlayerItem:_currentPlayerItem];
-    [_player play];
+- (void)pauseMusic{
+    if (!_currentPlayerItem) {
+        return;
+    }
+    if (_player.rate) {
+        [_player pause];
+    }else{
+        [_player play];
+    }
+//    _currentPlayerItem = [[AVPlayerItem alloc]initWithURL:url];
+//    _player = [[AVPlayer alloc]initWithPlayerItem:_currentPlayerItem];
+//    [_player play];
 }
+
 -(void)playWithModel:(TracksViewModel *)tracks indexPathRow:(NSInteger)indexPathRow{
     _tracksVM = tracks;
     _rowNumber = _tracksVM.rowNumber;
@@ -38,6 +48,19 @@
     _currentPlayerItem = [AVPlayerItem playerItemWithURL:musicURL];
     _player = [[AVPlayer alloc]initWithPlayerItem:_currentPlayerItem];
     [_player play];
-    
 }
+
+//- (void)playTracksWithAlbumId:(NSInteger)albumId title:(NSString *)title tag:(NSInteger)tag{
+//    TracksViewModel *tracksVM = [[TracksViewModel alloc]initWithAlbumId:albumId title:title isAsc:YES];
+//    [tracksVM getItemModelData:^(NSError *error) {
+//        NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+//        userInfo[@"musicURL"] = [tracksVM playURLForRow:tag];
+//        userInfo[@"indexPathRow"] = @(tag);
+//        userInfo[@"theSong"] = tracksVM;
+//        userInfo[@"coverURL"] = [tracksVM coverURLForRow:tag];
+//        [self playWithModel:tracksVM indexPathRow:tag];
+////        [[NSNotificationCenter defaultCenter]postNotificationName:@"StartPlay" object:nil userInfo:[userInfo copy]];
+//    }];
+//}
+
 @end

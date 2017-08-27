@@ -87,7 +87,10 @@
 }
 
 
-
+- (void)setIsPlay:(BOOL)isPlay{
+    NSString *imageName= isPlay?@"big_pause_button":@"big_play_button";
+    [self.playButton setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+}
 
 
 

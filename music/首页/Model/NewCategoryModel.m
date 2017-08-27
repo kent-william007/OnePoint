@@ -9,6 +9,8 @@
 #import "NewCategoryModel.h"
 
 @implementation NewCategoryModel
+
+
 + (NSDictionary *)objectClassInArray{
     return @{@"list" : [NewCategoryList class]};
 }
@@ -16,5 +18,10 @@
 
 
 @implementation NewCategoryList
-
+- (instancetype)init{
+    if (self = [super init]) {
+        self.play = NO;
+    }
+    return self;
+}
 @end
