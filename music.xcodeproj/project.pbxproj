@@ -12,9 +12,14 @@
 		370567D91F3EE2B800AB022C /* XJRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 370567D81F3EE2B800AB022C /* XJRecommendViewController.m */; };
 		370D71111F45C2AA00C137D2 /* DestinationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 370D71101F45C2AA00C137D2 /* DestinationModel.m */; };
 		371647661F41A10500828335 /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 371647651F41A10500828335 /* UIButton+EnlargeTouchArea.m */; };
+		371C2B751F59854F0086FE20 /* XJMainPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371C2B741F59854F0086FE20 /* XJMainPlayController.m */; };
+		371C2B781F5986080086FE20 /* XJMainPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 371C2B771F5986080086FE20 /* XJMainPlayView.m */; };
 		372DE0741F4BD87D00F52D1D /* XJRecommendViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 372DE0731F4BD87D00F52D1D /* XJRecommendViewCell.m */; };
 		3748ACF11F43175B00AA9183 /* XJMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3748ACF01F43175B00AA9183 /* XJMainTableViewCell.m */; };
+		374DB05C1F5BE819003DE302 /* UIView+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 374DB05B1F5BE819003DE302 /* UIView+Animations.m */; };
+		37556E6B1F57A90D00B65CFB /* XJSongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37556E6A1F57A90D00B65CFB /* XJSongCell.m */; };
 		3765F0261F3EDC9E00EC9C61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3765F0251F3EDC9E00EC9C61 /* Images.xcassets */; };
+		377DBDCF1F569A6B0073DCCC /* XJSongHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 377DBDCE1F569A6B0073DCCC /* XJSongHeaderView.m */; };
 		3792FDC41F525F0A00DE9078 /* XJRecommendSectionTItle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3792FDC31F525F0A00DE9078 /* XJRecommendSectionTItle.m */; };
 		3792FDC71F526A5200DE9078 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3792FDC61F526A5200DE9078 /* UIButton+Extension.m */; };
 		3792FDC91F52ACC300DE9078 /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 3792FDC81F52ACC300DE9078 /* arrow_left.png */; };
@@ -38,6 +43,7 @@
 		37AC39671F3DA0DB00A6A50F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AC39661F3DA0DB00A6A50F /* ViewController.m */; };
 		37ADB7341F3EE9940063F493 /* XJPlayTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ADB7331F3EE9940063F493 /* XJPlayTabbar.m */; };
 		37ADB7391F3EED260063F493 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ADB7381F3EED260063F493 /* UIView+Extension.m */; };
+		37B23BEF1F5AA45200646661 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B23BEE1F5AA45200646661 /* NSString+Extension.m */; };
 		37D84D6C1F429899005083B2 /* XJPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D84D6B1F429899005083B2 /* XJPlayView.m */; };
 		BE279A87A507F140AA47A522 /* libPods-music.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD4EC54D93F28F4E604D864 /* libPods-music.a */; };
 /* End PBXBuildFile section */
@@ -55,11 +61,22 @@
 		370D71101F45C2AA00C137D2 /* DestinationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationModel.m; sourceTree = "<group>"; };
 		371647641F41A10500828335 /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
 		371647651F41A10500828335 /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
+		371C2B731F59854F0086FE20 /* XJMainPlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJMainPlayController.h; sourceTree = "<group>"; };
+		371C2B741F59854F0086FE20 /* XJMainPlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJMainPlayController.m; sourceTree = "<group>"; };
+		371C2B761F5986080086FE20 /* XJMainPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJMainPlayView.h; sourceTree = "<group>"; };
+		371C2B771F5986080086FE20 /* XJMainPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJMainPlayView.m; sourceTree = "<group>"; };
 		372DE0721F4BD87D00F52D1D /* XJRecommendViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRecommendViewCell.h; sourceTree = "<group>"; };
 		372DE0731F4BD87D00F52D1D /* XJRecommendViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRecommendViewCell.m; sourceTree = "<group>"; };
 		3748ACEF1F43175B00AA9183 /* XJMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJMainTableViewCell.h; sourceTree = "<group>"; };
 		3748ACF01F43175B00AA9183 /* XJMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJMainTableViewCell.m; sourceTree = "<group>"; };
+		374DB05A1F5BE819003DE302 /* UIView+Animations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animations.h"; sourceTree = "<group>"; };
+		374DB05B1F5BE819003DE302 /* UIView+Animations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animations.m"; sourceTree = "<group>"; };
+		37556E691F57A90D00B65CFB /* XJSongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJSongCell.h; sourceTree = "<group>"; };
+		37556E6A1F57A90D00B65CFB /* XJSongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJSongCell.m; sourceTree = "<group>"; };
+		37556E761F586E8B00B65CFB /* MacroHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroHeader.h; sourceTree = "<group>"; };
 		3765F0251F3EDC9E00EC9C61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		377DBDCD1F569A6B0073DCCC /* XJSongHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJSongHeaderView.h; sourceTree = "<group>"; };
+		377DBDCE1F569A6B0073DCCC /* XJSongHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJSongHeaderView.m; sourceTree = "<group>"; };
 		3792FDC21F525F0A00DE9078 /* XJRecommendSectionTItle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRecommendSectionTItle.h; sourceTree = "<group>"; };
 		3792FDC31F525F0A00DE9078 /* XJRecommendSectionTItle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRecommendSectionTItle.m; sourceTree = "<group>"; };
 		3792FDC51F526A5200DE9078 /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
@@ -107,6 +124,8 @@
 		37ADB7351F3EEB890063F493 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		37ADB7371F3EED260063F493 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		37ADB7381F3EED260063F493 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		37B23BED1F5AA45200646661 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		37B23BEE1F5AA45200646661 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		37D84D6A1F429899005083B2 /* XJPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJPlayView.h; sourceTree = "<group>"; };
 		37D84D6B1F429899005083B2 /* XJPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJPlayView.m; sourceTree = "<group>"; };
 		4FD4EC54D93F28F4E604D864 /* libPods-music.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-music.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +180,7 @@
 		370567C81F3EE1CC00AB022C /* 推荐 */ = {
 			isa = PBXGroup;
 			children = (
+				377DBDCC1F56956A0073DCCC /* Model */,
 				370567C91F3EE1CC00AB022C /* Controller */,
 				370567CA1F3EE1CC00AB022C /* View */,
 			);
@@ -183,10 +203,14 @@
 		370567CA1F3EE1CC00AB022C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				37556E691F57A90D00B65CFB /* XJSongCell.h */,
+				37556E6A1F57A90D00B65CFB /* XJSongCell.m */,
 				379BE6231F47F516001826BB /* XJNavigaterView.h */,
 				379BE6241F47F516001826BB /* XJNavigaterView.m */,
 				379BE6261F481096001826BB /* XJBGCollectionViewCell.h */,
 				379BE6271F481096001826BB /* XJBGCollectionViewCell.m */,
+				377DBDCD1F569A6B0073DCCC /* XJSongHeaderView.h */,
+				377DBDCE1F569A6B0073DCCC /* XJSongHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,6 +257,8 @@
 			children = (
 				370567D11F3EE25400AB022C /* XJTabBarController.h */,
 				370567D21F3EE25400AB022C /* XJTabBarController.m */,
+				371C2B731F59854F0086FE20 /* XJMainPlayController.h */,
+				371C2B741F59854F0086FE20 /* XJMainPlayController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -246,6 +272,13 @@
 				37A9BF4A1F42D43700297BC1 /* XJMoreNetManager.m */,
 			);
 			path = NetManager;
+			sourceTree = "<group>";
+		};
+		377DBDCC1F56956A0073DCCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		379BE6191F47EFF2001826BB /* 乐库 */ = {
@@ -348,6 +381,8 @@
 				37ADB7331F3EE9940063F493 /* XJPlayTabbar.m */,
 				37D84D6A1F429899005083B2 /* XJPlayView.h */,
 				37D84D6B1F429899005083B2 /* XJPlayView.m */,
+				371C2B761F5986080086FE20 /* XJMainPlayView.h */,
+				371C2B771F5986080086FE20 /* XJMainPlayView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,6 +396,10 @@
 				37ADB7381F3EED260063F493 /* UIView+Extension.m */,
 				3792FDC51F526A5200DE9078 /* UIButton+Extension.h */,
 				3792FDC61F526A5200DE9078 /* UIButton+Extension.m */,
+				37B23BED1F5AA45200646661 /* NSString+Extension.h */,
+				37B23BEE1F5AA45200646661 /* NSString+Extension.m */,
+				374DB05A1F5BE819003DE302 /* UIView+Animations.h */,
+				374DB05B1F5BE819003DE302 /* UIView+Animations.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -378,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				37ADB7351F3EEB890063F493 /* PrefixHeader.pch */,
+				37556E761F586E8B00B65CFB /* MacroHeader.h */,
 				4FD4EC54D93F28F4E604D864 /* libPods-music.a */,
 			);
 			name = Frameworks;
@@ -417,6 +457,7 @@
 				TargetAttributes = {
 					37AC395B1F3DA0DB00A6A50F = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 36BYRP82CS;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -504,6 +545,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37556E6B1F57A90D00B65CFB /* XJSongCell.m in Sources */,
 				379BE61F1F47F0C8001826BB /* XJMLibraryViewController.m in Sources */,
 				37AC39671F3DA0DB00A6A50F /* ViewController.m in Sources */,
 				37A9BF561F42E22000297BC1 /* BaseViewModel.m in Sources */,
@@ -516,12 +558,15 @@
 				37ADB7341F3EE9940063F493 /* XJPlayTabbar.m in Sources */,
 				3792FDC71F526A5200DE9078 /* UIButton+Extension.m in Sources */,
 				37A9BF521F42D79700297BC1 /* NewCategoryModel.m in Sources */,
+				374DB05C1F5BE819003DE302 /* UIView+Animations.m in Sources */,
 				37AC39641F3DA0DB00A6A50F /* AppDelegate.m in Sources */,
 				37AC39611F3DA0DB00A6A50F /* main.m in Sources */,
+				371C2B781F5986080086FE20 /* XJMainPlayView.m in Sources */,
 				37ADB7391F3EED260063F493 /* UIView+Extension.m in Sources */,
 				379BE6281F481096001826BB /* XJBGCollectionViewCell.m in Sources */,
 				37AA16191F43DCE400A81F1C /* XJPLayManager.m in Sources */,
 				3748ACF11F43175B00AA9183 /* XJMainTableViewCell.m in Sources */,
+				37B23BEF1F5AA45200646661 /* NSString+Extension.m in Sources */,
 				37A9BF4B1F42D43700297BC1 /* XJMoreNetManager.m in Sources */,
 				3792FDCC1F530B5A00DE9078 /* XJSongViewController.m in Sources */,
 				372DE0741F4BD87D00F52D1D /* XJRecommendViewCell.m in Sources */,
@@ -531,6 +576,8 @@
 				370567D61F3EE27000AB022C /* XJMainViewController.m in Sources */,
 				371647661F41A10500828335 /* UIButton+EnlargeTouchArea.m in Sources */,
 				379BE6251F47F516001826BB /* XJNavigaterView.m in Sources */,
+				371C2B751F59854F0086FE20 /* XJMainPlayController.m in Sources */,
+				377DBDCF1F569A6B0073DCCC /* XJSongHeaderView.m in Sources */,
 				379BE62E1F486A1B001826BB /* ContentsModel.m in Sources */,
 				379BE62B1F486812001826BB /* MoreContentViewModel.m in Sources */,
 				37A9BF481F42D13B00297BC1 /* XJNetManager.m in Sources */,
@@ -638,12 +685,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = music/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "---.music";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.onePoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -654,12 +704,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = music/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "---.music";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.onePoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;

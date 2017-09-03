@@ -7,9 +7,12 @@
 //
 
 #import "XJPlayView.h"
+#import "XJSongViewController.h"
 
 @implementation XJPlayView
-
+{
+    void(^c_touchBlock)();
+}
 - (instancetype)init{
     if (self = [super init]) {
         UIView *bgView = [[UIView alloc]init];
@@ -52,10 +55,22 @@
             make.center.equalTo(loopImage);
             make.width.height.equalTo(radius);
         }];
+        [playBun addTarget:self action:@selector(playbunClick:) forControlEvents:UIControlEventTouchUpInside];
         self.playBun = playBun;
     }
     return self;
 }
+
+- (void)touchPlayButton:(void (^)())clickBlock{
+    c_touchBlock = [clickBlock copy];
+}
+
+- (void)playbunClick:(UIButton *)sender{
+    if (c_touchBlock) {
+        c_touchBlock();
+    }
+}
+
 - (void)setPlayButtonView{
     
     [self.playBun setBackgroundImage:nil forState:UIControlStateNormal];

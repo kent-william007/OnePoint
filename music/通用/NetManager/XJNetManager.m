@@ -36,7 +36,7 @@
     
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
     NSString *abc = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",abc);
+    //NSLog(@"%@",abc);
     return abc;
     
 }

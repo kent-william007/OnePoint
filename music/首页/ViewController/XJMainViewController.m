@@ -109,15 +109,18 @@
 - (void)loadMusicWithTag:(NSInteger)tag{
     TracksViewModel *tracksVM = [[TracksViewModel alloc]initWithAlbumId:[self.contentVM albumIdForRow:tag] title:[self.contentVM titleForRow:tag] isAsc:YES];
     
-    [tracksVM getItemModelData:^(NSError *error) {
+    [tracksVM getDataCompletionHandle:^(NSError *error) {
         NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-        userInfo[@"musicURL"] = [tracksVM playURLForRow:tag];
-        userInfo[@"indexPathRow"] = @(tag);
+        userInfo[@"musicURL"] = [tracksVM playURLForRow:0];
+        userInfo[@"indexPathRow"] = @(0);
         userInfo[@"theSong"] = tracksVM;
-        userInfo[@"coverURL"] = [tracksVM coverURLForRow:tag];
+        userInfo[@"coverURL"] = [tracksVM coverURLForRow:0];
         [[NSNotificationCenter defaultCenter]postNotificationName:@"StartPlay" object:nil userInfo:[userInfo copy]];
+
     }];
 }
+
+
 
 
 - (NewContentViewModel *)contentVM{

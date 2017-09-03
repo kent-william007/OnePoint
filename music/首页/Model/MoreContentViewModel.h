@@ -12,6 +12,9 @@
 
 - (instancetype)initWithCategoryId:(NSInteger)categoryId contentType:(NSString *)type;
 
+/**通过分组数和行数(IndexPath), 获取类别ID */
+- (NSInteger)albumIdForIndexPath:(NSIndexPath *)indexPath;
+
 /**轮播图的URL*/
 - (NSArray *)focusImgURLArray;
 

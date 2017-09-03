@@ -11,7 +11,7 @@
 @interface XJPlayView : UIView
 @property(nonatomic,strong)UIButton *playBun;
 @property(nonatomic,strong)UIImageView *loopImage;
-
+- (void)touchPlayButton:(void(^)())clickBlock;
 - (void)setPlayButtonView;
 - (void)setPauseButtonView;
 @end

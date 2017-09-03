@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface XJSongViewController : UIViewController
-
+- (instancetype)initWithAlbumId:(NSInteger )albumId title:(NSString *)title;
 @end

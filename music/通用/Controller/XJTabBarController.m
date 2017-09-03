@@ -12,9 +12,10 @@
 #import "XJPlayTabbar.h"
 #import "XJPlayView.h"
 #import "XJPLayManager.h"
+#import "XJMainPlayController.h"
 
 
-@interface XJTabBarController ()
+@interface XJTabBarController ()<UINavigationControllerDelegate,UITabBarControllerDelegate>
 @property(nonatomic,strong)XJPlayView *player;
 @end
 
@@ -25,6 +26,7 @@
     [self initTabBar];
     [self hideTabBarTopLine];
 }
+
 - (void)initTabBar{
     
     XJMainViewController *mainVC = [[XJMainViewController alloc]init];
@@ -59,6 +61,11 @@
 
     [_player.loopImage sd_setImageWithURL:coverURL placeholderImage:[UIImage imageNamed:@"tabbar_np_play"]];
     [_player setPlayButtonView];
+    [_player touchPlayButton:^{
+        XJMainPlayController *playVC = [[XJMainPlayController alloc]init];
+        playVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        [self presentViewController:playVC animated:YES completion:nil];
+    }];
     [playmanager playWithModel:_tracksVM indexPathRow:_indexPathRow];
 }
 - (void)controller:(UIViewController *)itemVC title:(NSString *)title image:(NSString *)imageName selectImage:(NSString *)selectImageName{
@@ -68,10 +75,9 @@
         itemVC.tabBarItem.selectedImage = [UIImage imageNamed:selectImageName];
     }
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:itemVC];
+    nav.delegate = self;
     [self addChildViewController:nav];
 }
-
-
 
 - (void)hideTabBarTopLine{
     CGRect rect = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
@@ -83,6 +89,76 @@
     UIGraphicsEndImageContext();
     [self.tabBar setBackgroundImage:img];
     [self.tabBar setShadowImage:img];
+}
+
+
+//-(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+//    return [[FYMissAnimation alloc]init];
+//}
+//
+//-(id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
+//    return (_interactiveTransition.isInteracting ? _interactiveTransition : nil);
+//}
+
+//- (void)navigationController:(UINavigationController *)navigationController
+//      willShowViewController:(UIViewController *)viewController
+//                    animated:(BOOL)animated{
+//    
+//    if (viewController.hidesBottomBarWhenPushed) {
+//        
+//        if(self.tabBar.frame.origin.y == [[UIScreen mainScreen] bounds].size.height - 49){
+//            
+//            [UIView animateWithDuration:0.2
+//                             animations:^{
+//                                 CGRect tabFrame = self.tabBar.frame;
+//                                 tabFrame.origin.y = [[UIScreen mainScreen] bounds].size.height;
+//                                 self.tabBar.frame = tabFrame;
+//                             }];
+//            self.tabBar.hidden = YES;
+//        }
+//        //self.playView.hidden = YES;
+//        
+//    } else {
+//        
+//    }
+//     [super.view bringSubviewToFront:self.player];
+//    
+//}
+
+
+
+- (void)navigationController:(UINavigationController *)navigationController
+       didShowViewController:(UIViewController *)viewController
+                    animated:(BOOL)animated{
+    
+//    if (viewController.hidesBottomBarWhenPushed) {
+//        
+//    } else {
+//        
+//        if(self.tabBar.frame.origin.y == [[UIScreen mainScreen] bounds].size.height ){
+//            
+//            [UIView animateWithDuration:0.2
+//                             animations:^{
+//                                 CGRect tabFrame = self.tabBar.frame;
+//                                 tabFrame.origin.y += -49;
+//                                 self.tabBar.frame = tabFrame;
+//                             }];
+//            self.tabBar.hidden = NO;
+//            
+//        }
+//        //self.playView.hidden = YES;
+//    }
+    [super.view bringSubviewToFront:self.player];
+    //NSLog(@"%@",self.playView.superview);
+    
+}
+
+- (void)hideTabBar {
+    self.player.hidden = NO;
+}
+
+- (void)showTabBar{
+    self.player.hidden = YES;
 }
 
 

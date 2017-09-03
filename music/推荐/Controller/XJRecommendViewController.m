@@ -24,16 +24,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self initTalbeview];
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+//    XJSongViewController *song = [[XJSongViewController alloc]init];
+//    song.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:song animated:YES];
+
+}
+
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    XJSongViewController *song = [[XJSongViewController alloc]init];
+//    song.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:song animated:YES];
+//
+//}
+
 
 - (void)initTalbeview{
     
+    self.view.backgroundColor = [UIColor orangeColor];
     _mTableview = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     [self.view addSubview:_mTableview];
     [_mTableview mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+//        make.top.equalTo(self.view).offset(20);
+        make.top.leading.trailing.equalTo(self.view);
+        make.bottom.equalTo(self.view).offset(-100);
     }];
     _mTableview.delegate = self;
     _mTableview.dataSource = self;
@@ -50,14 +68,16 @@
 
 - (UIView *)tableViewHeader{
     UIView *header = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width * 0.52)];
-
+//    header.backgroundColor = [UIColor redColor];
     _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero imagesGroup:nil];
     _cycleScrollView.backgroundColor = [UIColor brownColor];
     _cycleScrollView.delegate = self;
     
     [header addSubview:_cycleScrollView];
     [_cycleScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(header);
+//        make.edges.equalTo(header);
+        make.top.equalTo(header).offset(12);
+        make.leading.trailing.bottom.equalTo(header);
     }];
 
     return header;
@@ -94,7 +114,10 @@
     return 80;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    XJSongViewController *song = [[XJSongViewController alloc]init];
+    
+    XJSongViewController *song = [[XJSongViewController alloc]initWithAlbumId:[self.model albumIdForIndexPath:indexPath]
+                                                                        title:[self.model titleForRowAtIndexPath:indexPath]];
+    song.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:song animated:YES];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -28,7 +28,7 @@
 - (void)getDataCompletionHandle:(void(^)(NSError *error))completed{
     self.dataTask = [XJMoreNetManager getContentsForCategoryId:_categoryId contentType:_type completionHandle:^(id responseObject, NSError *error) {
         self.model = responseObject;
-        NSLog(@"%@",responseObject);
+        //NSLog(@"%@",responseObject);
         completed(error);
 
     }];
@@ -51,6 +51,11 @@
        path = self.model.categoryContents.list[indexPath.section].list[indexPath.row].coverMiddle;
     }
     return [NSURL URLWithString:path];
+}
+
+/**通过分组数和行数(IndexPath), 获取类别ID*/
+- (NSInteger)albumIdForIndexPath:(NSIndexPath *)indexPath {
+    return self.model.categoryContents.list[indexPath.section].list[indexPath.row].albumId;
 }
 
 /**分组*/

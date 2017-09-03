@@ -23,7 +23,7 @@
 + (id)getTracksForMuisc:(NSInteger)modelId completionHandle:(void (^)(id, NSError *))completed{
     NSString *path = [NSString stringWithFormat:@"http://o8yhyhsyd.bkt.clouddn.com/musicAlbum.json"];
     return  [self GET:path paramaters:nil complationHandle:^(id responseObject, NSError *error) {
-        NSLog(@"responseObject:%@",responseObject);
+
         if (responseObject) {
             completed([NewCategoryModel mj_objectWithKeyValues:responseObject],nil);
         }else{
@@ -37,7 +37,7 @@
     NSDictionary *params = @{@"albumId":@(albumId),@"title":title,@"isAsc":@(isAsc),kURLDevice,kURLPosition};
     NSString *path = [NSString stringWithFormat:@"http://mobile.ximalaya.com/mobile/others/ca/album/track/%ld/true/1/20",(long)albumId];
     return [self GET:path paramaters:params complationHandle:^(id responseObject, NSError *error) {
-        NSLog(@"%@",responseObject);
+
         completed([DestinationModel mj_objectWithKeyValues:responseObject],nil);
     }];
 }

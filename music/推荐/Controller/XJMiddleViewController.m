@@ -23,6 +23,7 @@ static NSString *cellID = @"XJBGCollectionViewCell";
 @interface XJMiddleViewController()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,XJNavigaterViewDelegate>
 @property(nonatomic,strong)UICollectionView *mainCollectionView;
 @property(nonatomic,strong)XJNavigaterView *titleView;
+@property(nonatomic,assign)BOOL isFirst;
 @end
 
 @implementation XJMiddleViewController{
@@ -31,6 +32,8 @@ static NSString *cellID = @"XJBGCollectionViewCell";
 }
 - (void)viewDidLoad{
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    _isFirst = YES;
     self.view.backgroundColor = [UIColor whiteColor];
     UIView *uivew = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 40)];
     uivew.backgroundColor = [UIColor redColor];
@@ -86,10 +89,15 @@ static NSString *cellID = @"XJBGCollectionViewCell";
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.childViewControllers.count/2 inSection:0];
-    [_mainCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone
-                                        animated:NO];
+    //首次进入，显示中间项
+    if (_isFirst) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.childViewControllers.count/2 inSection:0];
+        [_mainCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone
+                                            animated:NO];
+        [_titleView setSelecButtonIndex:self.childViewControllers.count/2];
+        _isFirst = NO;
 
+    }
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

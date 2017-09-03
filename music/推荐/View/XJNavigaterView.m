@@ -23,15 +23,9 @@ static CGFloat height = 40;
         self.userInteractionEnabled = YES;
         [titleArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             UIButton *bun = [UIButton buttonWithType:UIButtonTypeCustom];
-//            bun.backgroundColor = [UIColor colorWithRed:arc4random()%256/255.0 green:arc4random()%256/255.0 blue:arc4random()%256/255.0 alpha:0.7];
             bun.tag = 100 + idx;
             [bun setTitle:obj forState:UIControlStateNormal];
-            if (idx%2==1) {
-                [self selectStatus:bun];
-                _currentSelectBun = bun;
-            }else{
-                [self noSelectStatus:bun];
-            }
+            [self noSelectStatus:bun];
             [bun addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:bun];
         }];
@@ -40,7 +34,7 @@ static CGFloat height = 40;
 }
 
 - (void)layoutSubviews{
-    
+  
   CGFloat width = ([UIScreen mainScreen].bounds.size.width-20)/_titleArray.count;
   [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
          CGFloat originX = idx * width;
@@ -79,11 +73,13 @@ static CGFloat height = 40;
     }
 }
 
+//选中状态到按钮
 - (void)selectStatus:(UIButton *)selectBun{
     [selectBun setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     selectBun.titleLabel.font = [UIFont systemFontOfSize:17];
 }
 
+//未选中状态到按钮
 - (void)noSelectStatus:(UIButton *)noSelectBun{
     [noSelectBun setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     noSelectBun.titleLabel.font = [UIFont systemFontOfSize:15];
