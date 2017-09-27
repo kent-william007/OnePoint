@@ -69,6 +69,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UITableView+FDTemplateLayoutCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>WebViewJavascriptBridge.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,17 +82,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>034267555A9385E2F2FB84EE1FA89A4F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>42390E4978764005CCFB1DDF56C9C398</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>426BC4549A625B5E1E4200D5261A98BF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4A15B3552F169271B0982129B4C4268C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,12 +97,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>65E86FC8F874CD855F1291330BDE16D1</key>
+		<key>58F00AD82B67FCC568AA5774E60EE3CA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6B328D0A492A0A3E6923A157AE75EF24</key>
+		<key>65E86FC8F874CD855F1291330BDE16D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,7 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>925563236F3E041C088860A8F86B3694</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>928353533005A4198EBDA5B700D37B64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9A1A10C97E831A072E826A26641D02B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,12 +132,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AA99A74B6BCE86555BE86765202463C0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CA72978B255E15EC11B5E7225DAD740C</key>
+		<key>AE64E44A48ECC0047ABDF2702E417B4E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,12 +142,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>D5F33962C652AB1D3774997BEDB88D90</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DA1A7295DF2A99609DA0EEBF5E83233D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F86F735D3E37966C2E953E6B96D26FF4</key>
+		<key>FC4F8CE3BB4D4064C00152E83E70C333</key>
 		<dict>
 			<key>primary</key>
 			<true/>

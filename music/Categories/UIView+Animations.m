@@ -35,4 +35,24 @@
     transition.type = kCATransitionFade;
     [self.layer addAnimation:transition forKey:nil];
 }
+- (void)startRotationAnimationDuration:(CFTimeInterval)duration{
+//    UIImageView *loadImageV = [[UIImageView alloc]init];
+//    loadImageV.image = [UIImage imageNamed:@"music_tuijian"];
+//    loadImageV.center = self.view.center;
+//    loadImageV.bounds = CGRectMake(0, 0, 50, 50);
+    //动画
+    CABasicAnimation* rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
+    rotationAnimation.duration = duration;
+    rotationAnimation.cumulative = YES;
+    rotationAnimation.repeatCount = ULLONG_MAX;
+    [self.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+//    rotaImageV = loadImageV;
+}
+- (void)stopRotationAnimation{
+    [self.layer removeAllAnimations];
+}
+
+
 @end

@@ -11,8 +11,9 @@ target 'music' do
  pod 'SDWebImage'
  pod 'Mantle'
  pod 'MJRefresh'
- pod 'Masonry'
+ pod 'Masonry','~>1.0.2'
  pod 'WebViewJavascriptBridge'
  pod 'SDCycleScrollView'
+ pod 'UITableView+FDTemplateLayoutCell'
 end
 

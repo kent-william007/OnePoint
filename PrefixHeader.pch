@@ -15,4 +15,6 @@
 #import "UIView+Extension.h"
 #import "NSString+Extension.h"
 #import "MBProgressHUD.h"
+#import "UIView+Animations.h"
+
 #endif /* PrefixHeader_pch */
