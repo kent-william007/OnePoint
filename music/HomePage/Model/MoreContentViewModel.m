@@ -25,6 +25,14 @@
     }
     return self;
 }
+
+- (instancetype)GETCurrentInstanceWithCategoryId:(NSInteger)categoryId contentType:(NSString *)type{
+    if (!self) {
+        return [[MoreContentViewModel alloc] initWithCategoryId:categoryId contentType:type];
+    }
+    return self;
+}
+
 - (void)getDataCompletionHandle:(void(^)(NSError *error))completed{
     self.dataTask = [XJMoreNetManager getContentsForCategoryId:_categoryId contentType:_type completionHandle:^(id responseObject, NSError *error) {
         self.model = responseObject;
@@ -34,19 +42,6 @@
     }];
 }
 
-- (void)getDataMoreCompletionHandle:(void(^)(NSError *error))completed{
-//    self.dataTask = [XJMoreNetManager getContentsForCategoryId:_categoryId contentType:_type completionHandle:^(id responseObject, NSError *error) {
-//        self.model = responseObject;
-//        //NSLog(@"%@",responseObject);
-//        completed(error);
-//        
-//    }];
-    self.dataTask = [XJMoreNetManager getCategoryForCategoryId:_categoryId tagName:_type pageSize:10 completionHandle:^(id responseObject, NSError *error) {
-        self.model = responseObject;
-        //NSLog(@"%@",responseObject);
-        completed(error);
-    }];
-}
 /**轮播图*/
 - (NSArray *)focusImgURLArray{
     NSMutableArray *m_array = [NSMutableArray array];
@@ -108,9 +103,7 @@
 }
 
 - (NSString *)contentListName:(NSIndexPath *)indexPath{
-    
-    NSLog(@"%@",self.model.tags.list[indexPath.row].tname);
-   return self.model.tags.list[indexPath.row].tname;
+    return self.model.tags.list[indexPath.section].tname;
 }
 
 

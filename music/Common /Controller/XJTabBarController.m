@@ -20,7 +20,7 @@
 
 
 @interface XJTabBarController ()<UINavigationControllerDelegate,UITabBarControllerDelegate,UIViewControllerTransitioningDelegate>
-@property(nonatomic,strong)XJPlayView *player;
+//@property(nonatomic,strong)XJPlayView *player;
 @property(nonatomic,strong)FYPercentDrivenInteractiveTransition *interactiveTransition;
 @end
 
@@ -35,11 +35,11 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [_player startLoopTransitionAnimation];
+    [[XJPlayView shareInstance] startLoopTransitionAnimation];
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [_player stopRotationAnimation];
+    //[[XJPlayView shareInstance] pauseLoopTransitionAnimation];
 }
 
 
@@ -61,7 +61,7 @@
     player.backgroundColor = [UIColor clearColor];
     [self.view addSubview:player];
     [player mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(player.superview);
+        make.bottom.equalTo(player.superview).offset(-5);
         make.centerX.equalTo(player.superview);
         make.width.equalTo(@([UIScreen mainScreen].bounds.size.width/3));
         make.height.equalTo(@70);
@@ -71,7 +71,7 @@
 //    XJTabBar *tabBar = [[XJTabBar alloc]init];
 //    tabBar.tabBardelegate = self;
 //    [self setValue:tabBar forKey:@"tabBar"];
-    _player = player;
+//    _player = player;
     
     self.tabBar.backgroundColor = [UIColor whiteColor];
     [self addNotification];
@@ -83,6 +83,7 @@
         itemVC.tabBarItem.selectedImage = [UIImage imageNamed:selectImageName];
     }
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:itemVC];
+    nav.navigationBar.backgroundColor = [UIColor blackColor];
     nav.delegate = self;
     [self addChildViewController:nav];
 }
@@ -127,29 +128,28 @@
     [self.tabBar setShadowImage:img];
 }
 
-#pragma mark -添加播放音乐的通知
+//#pragma mark -添加播放音乐的通知
 - (void)addNotification{
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(playingInfoDictionary:) name:@"StartPlay" object:nil];
+//    [[XJPLayManager sharedInstance] addPlayObserver];
 }
-
+//
 - (void)playingInfoDictionary:(NSNotification *)notification{
    XJPLayManager *playmanager = [XJPLayManager sharedInstance];
    TracksViewModel *_tracksVM = notification.userInfo[@"theSong"];
    NSInteger  _indexPathRow = [notification.userInfo[@"indexPathRow"] integerValue];
    NSURL *coverURL = notification.userInfo[@"coverURL"];
-  [_player setLoopImageUrl:coverURL];
-//    [_player.loopImage stopRotationAnimation];
-//    [_player.loopImage sd_setImageWithURL:coverURL placeholderImage:[UIImage imageNamed:@"launchImage"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-//        [_player.loopImage startTransitionAnimation];
-//        [_player.loopImage startRotationAnimationDuration:2.0];
-//    }];
-    [_player setPlayButtonView];
-    [_player touchPlayButton:^{
+//  [_player pauseLoopTransitionAnimation];
+//  [[XJPlayView shareInstance] pauseLoopTransitionAnimation];
+    
+  [[XJPlayView shareInstance] setLoopImageUrl:coverURL];
+  [[XJPlayView shareInstance] setPlayButtonView];
+  [[XJPlayView shareInstance] touchPlayButton:^{
         XJMainPlayController *playVC = [[XJMainPlayController alloc]init];
         playVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
         [self presentViewController:playVC animated:YES completion:nil];
-    }];
-    [playmanager playWithModel:_tracksVM indexPathRow:_indexPathRow];
+  }];
+  [playmanager playWithModel:_tracksVM indexPathRow:_indexPathRow];
 }
 
 

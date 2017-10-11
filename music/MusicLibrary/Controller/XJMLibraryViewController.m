@@ -9,7 +9,7 @@
 #import "XJMLibraryViewController.h"
 #import "MoreContentViewModel.h"
 #import "XJLibraryCell.h"
-#import "XJRecommendViewController.h"
+#import "XJMLibraryDetailVC.h"
 
 @interface XJMLibraryViewController()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *mTableview;
@@ -47,6 +47,8 @@
 //    450/180
     _mTableview.delegate = self;
     _mTableview.dataSource = self;
+    _mTableview.rowHeight = kScreenW * (180/450.0);
+    _mTableview.sectionHeaderHeight = 10;
     [_mTableview registerClass:[XJLibraryCell class] forCellReuseIdentifier:@"XJLibraryCell"];
 }
 
@@ -56,41 +58,29 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  kScreenW * (180/450.0);
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 10;
-}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return _dataSource.count;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     [self.moreVM getDataCompletionHandle:^(NSError *error) {
-        XJRecommendViewController *recommentVC = [[XJRecommendViewController alloc]init];
-        recommentVC.contentType = [self.moreVM contentListName:indexPath];
-        recommentVC.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:recommentVC animated:YES];
+        XJMLibraryDetailVC *libraryVC = [[XJMLibraryDetailVC alloc]init];
+        libraryVC.contentType = [self.moreVM contentListName:indexPath];
+        [self.navigationController pushViewController:libraryVC animated:YES];
     }];
-    
-    
-    
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     XJLibraryCell *cell = [[XJLibraryCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"XJLibraryCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell contentForCell:_dataSource[indexPath.section]];
     return cell;
 }
-- (MoreContentViewModel *)moreVM {
+- (MoreContentViewModel *)moreVM{
     if (!_moreVM) {
-        _moreVM = [[MoreContentViewModel alloc] initWithCategoryId:2 contentType:@"album"];
+        _moreVM = [[MoreContentViewModel alloc]initWithCategoryId:2 contentType:@"album"];
     }
     return _moreVM;
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

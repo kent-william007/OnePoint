@@ -30,7 +30,7 @@
 
 - (void)startTransitionAnimation {
     CATransition *transition = [CATransition animation];
-    transition.duration = 1.0f;
+    transition.duration = 0.5f;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionFade;
     [self.layer addAnimation:transition forKey:nil];
@@ -50,9 +50,34 @@
     [self.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
 //    rotaImageV = loadImageV;
 }
-- (void)stopRotationAnimation{
+
+- (void)removeRotationAnimation{
     [self.layer removeAllAnimations];
 }
 
+- (void)pauseRotationAnimation{
+    [self pauseLayer:self.layer];
+}
+
+- (void)resumeRotationAnimation{
+    [self resumeLayer:self.layer];
+}
+
+//暂停动画
+-(void)pauseLayer:(CALayer*)layer{
+    CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
+    layer.speed = 0.0;
+    layer.timeOffset = pausedTime;
+}
+
+//动画的恢复方法
+-(void)resumeLayer:(CALayer*)layer{
+    CFTimeInterval pausedTime = [layer timeOffset];
+    layer.speed = 1.0;
+    layer.timeOffset = 0.0;
+    layer.beginTime = 0.0;
+    CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+    layer.beginTime = timeSincePause;
+}
 
 @end

@@ -29,6 +29,16 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    switch (self.sourceType) {
+        case DataSourceHistory:
+            self.title = @"播放历史";
+            break;
+        case DataSourceFavorite:
+            self.title = @"我的收藏";
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark -init TableView
@@ -41,8 +51,8 @@
     }];
     _mTableview.delegate = self;
     _mTableview.dataSource = self;
-    _mTableview.estimatedRowHeight = 100;
-
+    _mTableview.rowHeight = 80;
+    _mTableview.sectionFooterHeight = 10;
     [_mTableview registerClass:[XJRecommendViewCell class] forCellReuseIdentifier:@"XJRecommendViewCell"];
     
 }
@@ -62,12 +72,7 @@
     }
     return 35;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 10;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80;
-}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
@@ -80,7 +85,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     XJRecommendViewCell *cell = [[XJRecommendViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"XJRecommendViewCell"];
-    [cell.coverIcon sd_setImageWithURL:[_vModel coverMiddleForRow:indexPath.row] placeholderImage:[UIImage imageNamed:@"avatar_bg"]];
+    [cell.coverIcon sd_setImageWithURL:[_vModel coverMiddleForRow:indexPath.row] placeholderImage:[UIImage imageNamed:@"music_placeholder"]];
     cell.titleLabel.text = [_vModel titleForRow:indexPath.row];
     cell.introLabel.text = [_vModel nicknameRorRow:indexPath.row];
     cell.playCountLabel.text = [_vModel playTimesForRow:indexPath.row];

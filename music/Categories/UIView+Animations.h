@@ -22,6 +22,12 @@
  */
 - (void)startRotationAnimationDuration:(CFTimeInterval)duration;
 
-/**移除imageView动画*/
-- (void)stopRotationAnimation;
+/**移除动画*/
+- (void)removeRotationAnimation;
+
+/**暂停动画*/
+- (void)pauseRotationAnimation;
+
+/**重新启动动画*/
+- (void)resumeRotationAnimation;
 @end

@@ -9,6 +9,7 @@
 #import "XJPLayManager.h"
 #import "TracksViewModel.h"
 #import "XJPlayView.h"
+#import "XJMainPlayController.h"
 #import <MediaPlayer/MediaPlayer.h>
 
 @interface XJPLayManager()
@@ -44,14 +45,50 @@ AVPlayerItem *_mCurrentItem;
     return manager;
 }
 
+#pragma mark -添加播放音乐的通知
+- (void)addPlayObserver{
+    [[NSNotificationCenter defaultCenter]addObserver:[XJPLayManager sharedInstance] selector:@selector(playingInfoDictionary:) name:@"StartPlay" object:nil];
+}
+
+- (void)playingInfoDictionary:(NSNotification *)notification{
+    XJPLayManager *playmanager = [XJPLayManager sharedInstance];
+    TracksViewModel *mtracksVM = notification.userInfo[@"theSong"];
+    NSInteger  mindexPathRow = [notification.userInfo[@"indexPathRow"] integerValue];
+    NSURL *coverURL = notification.userInfo[@"coverURL"];
+    //  [_player pauseLoopTransitionAnimation];
+    //  [[XJPlayView shareInstance] pauseLoopTransitionAnimation];
+    
+    [[XJPlayView shareInstance] setLoopImageUrl:coverURL];
+    [[XJPlayView shareInstance] setPlayButtonView];
+    [[XJPlayView shareInstance] touchPlayButton:^{
+        XJMainPlayController *playVC = [[XJMainPlayController alloc]init];
+        playVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:playVC animated:YES completion:nil];
+//        [self presentViewController:playVC animated:YES completion:nil];
+        
+    }];
+    [playmanager playWithModel:mtracksVM indexPathRow:mindexPathRow];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"StartPlay" object:nil];
+}
+- (void)pauseCurrentMusic{
+    
+    if (!_currentPlayerItem) {
+        return;
+    }
+    
+    [[XJPlayView shareInstance] pauseLoopTransitionAnimation];
+}
+
 #pragma mark -暂停/播放音乐
 - (void)pauseMusic{
     if (!_currentPlayerItem) {
         return;
     }
     if (_player.rate) {
+        [[XJPlayView shareInstance] pauseLoopTransitionAnimation];
         [_player pause];
     }else{
+        [[XJPlayView shareInstance] resumeLoopTransitionAnimation];
         [_player play];
     }
 }
@@ -62,6 +99,7 @@ AVPlayerItem *_mCurrentItem;
         return;
     }
     if (_player.rate) {
+        
         [_player pause];
     }else{
         
@@ -192,11 +230,14 @@ AVPlayerItem *_mCurrentItem;
         NSTimeInterval totalTime = NSTimeIntervalSince1970;
         if (!isnan(CMTimeGetSeconds([newItem duration]) )) {
             totalTime = CMTimeGetSeconds([newItem duration]);
+        }else{
+            totalTime = 0.0;
         }
 #warning 使用block回调时，未解决循环引用问题
 //        if (c_progressValue) {
 //            c_progressValue(_currentTime,_totalTime);
 //        }
+
         if ([weakSelf.delegate respondsToSelector:@selector(progressCurrentValue:totalValue:)]) {
             [weakSelf.delegate progressCurrentValue:currentTime totalValue:totalTime];
         }
@@ -233,7 +274,6 @@ AVPlayerItem *_mCurrentItem;
 -(void)playbackFinished:(NSNotification *)notification{
     NSLog(@"视频播放完成.");
     [[XJPLayManager sharedInstance] nextSong];
-//    _lockedScreeninfo = nil;
 }
 
 - (void)setHistorySong{
@@ -261,16 +301,11 @@ AVPlayerItem *_mCurrentItem;
 }
 #pragma mark - 锁屏显示
 - (void)updateLockedScreenMusic{
-    
-//    NSNumber *total = [NSNumber numberWithFloat:CMTimeGetSeconds([self.player.currentItem duration])];
-//    NSNumber *be = [NSNumber numberWithFloat:CMTimeGetSeconds([self.player.currentItem currentTime])];
-//    NSLog(@"%@ %@",total,be);
     if (_mCurrentItem != self.player.currentItem) {
-        
         _mCurrentItem = self.player.currentItem;
         // 播放信息中心
         MPNowPlayingInfoCenter *center = [MPNowPlayingInfoCenter defaultCenter];
-        
+
         NSMutableDictionary * m_lockedScreeninfo = [NSMutableDictionary dictionary];
         // 歌手
         m_lockedScreeninfo[MPMediaItemPropertyArtist] = [self playSinger];
@@ -282,49 +317,10 @@ AVPlayerItem *_mCurrentItem;
         [m_lockedScreeninfo setObject:[NSNumber numberWithFloat:CMTimeGetSeconds([self.player.currentItem duration])] forKey:MPMediaItemPropertyPlaybackDuration];
         // 设置当前播放进度
         [m_lockedScreeninfo setObject:[NSNumber numberWithFloat:CMTimeGetSeconds([self.player.currentItem currentTime])] forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
-        
         // 切换播放信息
         center.nowPlayingInfo = m_lockedScreeninfo;
-
     }
-
-
-
-//    // 播放信息中心
-//    MPNowPlayingInfoCenter *center = [MPNowPlayingInfoCenter defaultCenter];
-//    // 初始化播放信息
-//    NSMutableDictionary *info = [NSMutableDictionary dictionary];
-//    // 歌手
-//    info[MPMediaItemPropertyArtist] = [self playSinger];
-//    // 歌曲名称
-//    info[MPMediaItemPropertyTitle] = [self playMusicTitle];
-//    // 设置图片
-//    info[MPMediaItemPropertyArtwork] = [[MPMediaItemArtwork alloc] initWithImage:[self lockedScreenImage]];
-//    // 设置持续时间（歌曲的总时间）
-//    [info setObject:[NSNumber numberWithFloat:CMTimeGetSeconds([self.player.currentItem duration])] forKey:MPMediaItemPropertyPlaybackDuration];
-//    // 设置当前播放进度
-//    [info setObject:[NSNumber numberWithFloat:CMTimeGetSeconds([self.player.currentItem currentTime])] forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
-//    // 切换播放信息
-//    center.nowPlayingInfo = info;
 }
-//- (NSMutableDictionary *)lockedScreeninfo{
-//    if (!_lockedScreeninfo) {
-//
-//        _lockedScreeninfo = [NSMutableDictionary dictionary];
-//        // 歌手
-//        _lockedScreeninfo[MPMediaItemPropertyArtist] = [self playSinger];
-//        // 歌曲名称
-//        _lockedScreeninfo[MPMediaItemPropertyTitle] = [self playMusicTitle];
-//        // 设置图片
-//        _lockedScreeninfo[MPMediaItemPropertyArtwork] = [[MPMediaItemArtwork alloc] initWithImage:[self lockedScreenImage]];
-//        // 设置持续时间（歌曲的总时间）
-//        [_lockedScreeninfo setObject:[NSNumber numberWithFloat:CMTimeGetSeconds([self.player.currentItem duration])] forKey:MPMediaItemPropertyPlaybackDuration];
-//        // 设置当前播放进度
-//        [_lockedScreeninfo setObject:[NSNumber numberWithFloat:CMTimeGetSeconds([self.player.currentItem currentTime])] forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
-//
-//    }
-//    return _lockedScreeninfo;
-//}
 
 - (void)dealloc{
     NSLog(@"%s",__func__);

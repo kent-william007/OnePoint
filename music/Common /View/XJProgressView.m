@@ -25,15 +25,18 @@ static UILabel *_messageLab;
     dispatch_once(&onceToken, ^{
         CGFloat s_width = [UIScreen mainScreen].bounds.size.width;
         CGFloat s_height = [UIScreen mainScreen].bounds.size.height;
-        _bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 64,s_width, s_height)];
-                UIImageView *loadingView = [[UIImageView alloc]init];
+
+        _bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0,s_width, s_height)];
+
+        UIImageView *loadingView = [[UIImageView alloc]init];
         loadingView.image = [UIImage imageNamed:@"loading"];
         loadingView.center = CGPointMake(s_width/2.0-25, s_height/2.0-50);
         loadingView.size = CGSizeMake(50, 50);
         _loadingView= loadingView;
         loadingView.tag = 1099;
         [_bgView addSubview:loadingView];
-     
+//        _bgView.backgroundColor = [UIColor blackColor];
+//        _bgView.alpha = 0.1;
         
         UILabel *messageLab = [[UILabel alloc]initWithFrame:CGRectMake(0, s_height/2.0, s_width, 50)];
         [_bgView addSubview:messageLab];
@@ -45,19 +48,22 @@ static UILabel *_messageLab;
     });
     
 //    UIWindow *keyWindon = [[UIApplication sharedApplication].windows objectAtIndex:0];
-    UIView *keyWindon = [self topViewController].view;
-    if (![keyWindon.subviews containsObject:_bgView]) {
-        [keyWindon addSubview:_bgView];
+    UIWindow *window = [UIApplication sharedApplication].windows[0];
+//    UIView *keyWindon = [self topViewController].view;
+    if (![window.subviews containsObject:_bgView]) {
+        [window addSubview:_bgView];
         [_loadingView startRotationAnimationDuration:1.2];
         _loadingView.alpha = 1.0;
+        _messageLab.alpha = 1.0;
         _messageLab.text = message;
     }
 }
 
 + (void)dismiss{
     if (_bgView) {
-        [UIView animateWithDuration:0.3 animations:^{
+        [UIView animateWithDuration:0.5 animations:^{
             _loadingView.alpha = 0.0;
+            _messageLab.alpha = 0.0;
         } completion:^(BOOL finished) {
             [_bgView removeFromSuperview];
         }];

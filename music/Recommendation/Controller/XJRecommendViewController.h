@@ -10,5 +10,5 @@
 #import "XJSuperViewController.h"
 
 @interface XJRecommendViewController : XJSuperViewController
-@property(nonatomic,copy)NSString *contentType;
+
 @end

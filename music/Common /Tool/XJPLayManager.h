@@ -31,6 +31,10 @@ typedef NS_ENUM(NSUInteger,PlayCycleType){
 
 + (instancetype)sharedInstance;
 
+/**添加监听播放音乐的通知*/
+- (void)addPlayObserver;
+/**暂停当前的音乐*/
+- (void)pauseCurrentMusic;
 /**暂停／播放*/
 - (void)pauseMusic;
 /**上一首*/

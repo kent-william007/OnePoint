@@ -11,6 +11,7 @@
 #import "MJExtension.h"
 #import "DestinationModel.h"
 #import "ContentsModel.h"
+#import "XJMLibraryModel.h"
 
 #define kURLVersion @"version":@"4.3.26.2"
 #define kURLDevice @"device":@"ios"
@@ -59,15 +60,10 @@
 // http://mobile.ximalaya.com/mobile/discovery/v1/category/album?calcDimension=hot&categoryId=1&device=android&pageId=1&pageSize=20&status=0&tagName=%E6%AD%A3%E8%83%BD%E9%87%8F%E5%8A%A0%E6%B2%B9%E7%AB%99
 + (id)getCategoryForCategoryId:(NSInteger)categoryId tagName:(NSString *)name pageSize:(NSInteger)size completionHandle:(void(^)(id responseObject, NSError *error))completed {
     // tagName中文需要转换成UTF8格式, 这个另类   直接需要中文
-    //    NSString *tagName = [name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];//网址转化
+    //  NSString *tagName = [name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];//网址转化
     NSDictionary *params = @{@"categoryId":@(categoryId),@"pageSize":@(size),@"tagName":name, kURLPageID,kURLDevice,kURLStatus,kURLCalcDimension};
-//    return [self GET:@"http://mobile.ximalaya.com/mobile/discovery/v1/category/album" parameters:params complationHandle:^(ContentCategoryModel* responseObject, NSError *error) {
-//        completed([ContentCategoryModel mj_objectWithKeyValues:responseObject],error);
-//        //NSLog(@"%@",responseObject);
-//    }];
-    
     return [self GET:@"http://mobile.ximalaya.com/mobile/discovery/v1/category/album" paramaters:params complationHandle:^(id responseObject, NSError *error) {
-        completed([ContentsModel mj_objectArrayWithKeyValuesArray:responseObject],nil);
+        completed([XJMLibraryModel mj_objectWithKeyValues:responseObject],nil);
     }];
 }
 

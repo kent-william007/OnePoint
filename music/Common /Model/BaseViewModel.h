@@ -12,7 +12,7 @@
 
 @optional
 - (void)getDataCompletionHandle:(void(^)(NSError * error))completed;
-- (void)getDataMoreCompletionHandle:(void(^)(NSError *error))completed;
+- (void)getLibraryDataCompletionHandle:(void(^)(NSError *error))completed;
 - (void)getAlbumIdData:(NSInteger)albumId title:(NSString*)title  CompletionHandle:(void(^)(NSError *error))completed;
 
 @end

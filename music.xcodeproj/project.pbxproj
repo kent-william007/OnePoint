@@ -10,6 +10,9 @@
 		371117A21F623ADD0025C7AD /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 371117A01F623ADD0025C7AD /* CoreDataModel.xcdatamodeld */; };
 		371117A51F6240860025C7AD /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 371117A41F6240860025C7AD /* CoreDataManager.m */; };
 		371647661F41A10500828335 /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 371647651F41A10500828335 /* UIButton+EnlargeTouchArea.m */; };
+		373761341F7BD99700917376 /* XJMLibraryDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 373761331F7BD99700917376 /* XJMLibraryDetailVC.m */; };
+		373761371F7BDA0900917376 /* XJMLibraryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 373761361F7BDA0900917376 /* XJMLibraryModel.m */; };
+		3737613A1F7BDD9F00917376 /* XJMLibraryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 373761391F7BDD9F00917376 /* XJMLibraryViewModel.m */; };
 		374DB05C1F5BE819003DE302 /* UIView+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 374DB05B1F5BE819003DE302 /* UIView+Animations.m */; };
 		375D57921F78F61A007C178E /* XJCountTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 375D57911F78F61A007C178E /* XJCountTimer.m */; };
 		37748DFF1F750A950012E977 /* XJShutInTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37748DFE1F750A950012E977 /* XJShutInTimeCell.m */; };
@@ -77,6 +80,12 @@
 		371117A41F6240860025C7AD /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		371647641F41A10500828335 /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
 		371647651F41A10500828335 /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
+		373761321F7BD99700917376 /* XJMLibraryDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJMLibraryDetailVC.h; sourceTree = "<group>"; };
+		373761331F7BD99700917376 /* XJMLibraryDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJMLibraryDetailVC.m; sourceTree = "<group>"; };
+		373761351F7BDA0900917376 /* XJMLibraryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJMLibraryModel.h; sourceTree = "<group>"; };
+		373761361F7BDA0900917376 /* XJMLibraryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJMLibraryModel.m; sourceTree = "<group>"; };
+		373761381F7BDD9F00917376 /* XJMLibraryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJMLibraryViewModel.h; sourceTree = "<group>"; };
+		373761391F7BDD9F00917376 /* XJMLibraryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJMLibraryViewModel.m; sourceTree = "<group>"; };
 		374DB05A1F5BE819003DE302 /* UIView+Animations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animations.h"; sourceTree = "<group>"; };
 		374DB05B1F5BE819003DE302 /* UIView+Animations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animations.m"; sourceTree = "<group>"; };
 		37556E761F586E8B00B65CFB /* MacroHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroHeader.h; sourceTree = "<group>"; };
@@ -240,6 +249,8 @@
 			children = (
 				37A492811F6CF449007301B7 /* XJMLibraryViewController.h */,
 				37A492821F6CF449007301B7 /* XJMLibraryViewController.m */,
+				373761321F7BD99700917376 /* XJMLibraryDetailVC.h */,
+				373761331F7BD99700917376 /* XJMLibraryDetailVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -247,6 +258,10 @@
 		37A492831F6CF449007301B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				373761351F7BDA0900917376 /* XJMLibraryModel.h */,
+				373761361F7BDA0900917376 /* XJMLibraryModel.m */,
+				373761381F7BDD9F00917376 /* XJMLibraryViewModel.h */,
+				373761391F7BDD9F00917376 /* XJMLibraryViewModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -710,6 +725,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				371117A21F623ADD0025C7AD /* CoreDataModel.xcdatamodeld in Sources */,
+				373761341F7BD99700917376 /* XJMLibraryDetailVC.m in Sources */,
 				37AC39671F3DA0DB00A6A50F /* ViewController.m in Sources */,
 				377AF8411F6ABC1700ABCA9A /* XJSuperViewController.m in Sources */,
 				37B374731F61A39200E8BA76 /* NewContentViewModel.m in Sources */,
@@ -724,9 +740,11 @@
 				37B374441F61A30A00E8BA76 /* XJBGCollectionViewCell.m in Sources */,
 				37B374261F61A2B200E8BA76 /* AnimationTableView.m in Sources */,
 				37D755CA1F68375200C2FCED /* XJHistory_Favorite_VC.m in Sources */,
+				3737613A1F7BDD9F00917376 /* XJMLibraryViewModel.m in Sources */,
 				3792FDC71F526A5200DE9078 /* UIButton+Extension.m in Sources */,
 				37B374431F61A30A00E8BA76 /* XJSongViewController.m in Sources */,
 				37A492781F6CC4E4007301B7 /* FYPercentDrivenInteractiveTransition.m in Sources */,
+				373761371F7BDA0900917376 /* XJMLibraryModel.m in Sources */,
 				374DB05C1F5BE819003DE302 /* UIView+Animations.m in Sources */,
 				37BB23E31F702C6D002EBCE1 /* FavoriteModel.m in Sources */,
 				37B374451F61A30A00E8BA76 /* XJNavigaterView.m in Sources */,

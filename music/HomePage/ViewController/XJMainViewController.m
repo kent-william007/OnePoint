@@ -45,6 +45,7 @@
     }];
     self.mainTableView.delegate = self;
     self.mainTableView.dataSource = self;
+    self.mainTableView.rowHeight = [UIScreen mainScreen].bounds.size.width * 1.2;
     [self.mainTableView registerClass:[XJMainTableViewCell class] forCellReuseIdentifier:@"MainTableViewCell"];
     
 }
@@ -57,9 +58,7 @@
 {
     return 1;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [UIScreen mainScreen].bounds.size.width * 1.2;
-}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 0) {
         return 0.0001;
@@ -72,7 +71,7 @@
     if (!cell) {
         cell = [[XJMainTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MainTableViewCell"];
     }
-    [cell.coverIV sd_setImageWithURL:[self.contentVM coverURLForRow:indexPath.section] placeholderImage:[UIImage imageNamed:@"launchImage"]];
+    [cell.coverIV sd_setImageWithURL:[self.contentVM coverURLForRow:indexPath.section] placeholderImage:[UIImage imageNamed:@"music_placeholder"]];
     cell.tagInt = indexPath.section;
     cell.titleLb.text = [self.contentVM trackTitleForRow:indexPath.section];
     cell.delegate = self;
@@ -85,7 +84,7 @@
 
 #pragma mark -Cell上按钮点击-XJMainTableViewDelegate
 - (void)mainTableViewDidClick:(NSInteger)tag{
-    
+//    [[XJPLayManager sharedInstance] addPlayObserver];
     NSArray *indexPaths;
     BOOL playStatus = [self.contentVM playStatus:tag];
     [self.contentVM setPlay:tag status:!playStatus];
@@ -100,6 +99,7 @@
         indexPaths = @[indexP];
         [[XJPLayManager sharedInstance] pauseMusic];
     }else{//点击其他的，暂停当前的
+//        [[XJPLayManager sharedInstance] pauseCurrentMusic];
         [self.contentVM setPlay:_oldeTagIndex status:NO];
         NSIndexPath * o_indexP = [NSIndexPath indexPathForRow:0 inSection:_oldeTagIndex];
         NSIndexPath * indexP = [NSIndexPath indexPathForRow:0 inSection:tag];
@@ -123,7 +123,6 @@
         userInfo[@"theSong"] = tracksVM;
         userInfo[@"coverURL"] = [tracksVM coverURLForRow:0];
         [[NSNotificationCenter defaultCenter]postNotificationName:@"StartPlay" object:nil userInfo:[userInfo copy]];
-
     }];
 }
 

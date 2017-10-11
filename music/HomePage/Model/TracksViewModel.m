@@ -249,7 +249,6 @@
         _coreManager = [[CoreDataManager alloc]init];
     }
     _coreManager.sourceType = sourceType;
-    NSLog(@"----->%li %@",songContent.albumId,songContent.title);
     if (songContent.title != nil) {
         [_coreManager coreDatWithDList:songContent];
     }

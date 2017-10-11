@@ -43,7 +43,6 @@
 
 /**row-albumRank*/
 - (NSString *)albumRankForRowAtIndexPath:(NSIndexPath *)indexpath;
-
 - (NSString *)contentListName:(NSIndexPath *)indexPath;
 
 @end

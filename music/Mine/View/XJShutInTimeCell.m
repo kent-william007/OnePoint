@@ -36,7 +36,7 @@
         [XJCountTimer attempDealloc];
         return;
     }
-
+    //每次选择另一个时间时，先把之前的倒计时停止
     [XJCountTimer stopTimer];
 
     NSLog(@"shutIn-Time-start---------");

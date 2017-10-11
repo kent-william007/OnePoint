@@ -96,23 +96,55 @@
 }
 
 - (void)setLoopImageUrl:(NSURL *)loopImageUrl{
-    [self.loopImage sd_setImageWithURL:loopImageUrl placeholderImage:[UIImage imageNamed:@"launchImage"]];
+    
+    __weak typeof(self) weakSelf = self;
+    [self.loopImage sd_setImageWithURL:loopImageUrl placeholderImage:[UIImage imageNamed:@"music_placeholder"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        XJPlayView *strongSelf = weakSelf;
+        [strongSelf.loopImage resumeRotationAnimation];
+        [strongSelf.loopImage removeRotationAnimation];
+        [strongSelf.loopImage startTransitionAnimation];
+        [strongSelf.loopImage startRotationAnimationDuration:6.0];
+    }];
+}
+
+- (void)stopLoopTransitionAnimation{
+    if (self.loopImage) {
+//        if (self.loopImage) {
+//            [self.loopImage pauseRotationAnimation];
+//        }
+
+         self.loopImage.image = [UIImage imageNamed:@"launchImage"];
+        [self.loopImage startTransitionAnimation];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.loopImage removeRotationAnimation];
+        });
+    }
 }
 
 - (void)startLoopTransitionAnimation{
-    [self.loopImage stopRotationAnimation];
-    [self.loopImage startTransitionAnimation];
-    [self.loopImage startRotationAnimationDuration:6.0];
+    if (self.loopImage) {
+        [self.loopImage startRotationAnimationDuration:6.0];
+    }
+}
+
+- (void)resumeLoopTransitionAnimation{
+    if (self.loopImage) {
+        [self.loopImage resumeRotationAnimation];
+    }
+}
+
+- (void)pauseLoopTransitionAnimation{
+    if (self.loopImage) {
+        [self.loopImage pauseRotationAnimation];
+    }
 }
 
 - (void)setPlayButtonView{
-    
     [self.playBun setBackgroundImage:nil forState:UIControlStateNormal];
     [self.playBun setImage:nil forState:UIControlStateNormal];
 }
 
 - (void)setPauseButtonView{
-    
     [self.playBun setBackgroundImage:[UIImage imageNamed:@"avatar_bg"] forState:UIControlStateNormal];
     [self.playBun setImage:[UIImage imageNamed:@"toolbar_play_h_p"] forState:UIControlStateNormal];
 }

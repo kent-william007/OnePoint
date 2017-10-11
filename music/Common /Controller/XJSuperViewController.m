@@ -68,7 +68,6 @@
 - (void)dismissLoadingView{
     if (_loadImageV) {
 //        [_loadImageV.layer removeAllAnimations];
-        [_loadImageV stopRotationAnimation];
         [_loadImageV removeFromSuperview];
         _loadImageV = nil;
     }

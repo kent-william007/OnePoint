@@ -11,6 +11,7 @@
 #import "XJSongHeaderView.h"
 #import "XJSongCell.h"
 #import "XJMainPlayController.h"
+#import "XJPLayManager.h"
 
 @interface XJSongViewController()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,assign)NSInteger albumId;
@@ -71,6 +72,8 @@
 
     _mTableview.delegate = self;
     _mTableview.dataSource = self;
+    _mTableview.rowHeight = 100;
+    _mTableview.sectionHeaderHeight = 30;
     _mTableview.contentInset = UIEdgeInsetsMake(contentOfSet, 0,0, 0);
     [_mTableview registerClass:[XJSongCell class] forCellReuseIdentifier:@"XJSongCell"];
     
@@ -113,17 +116,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.model rowNumber];
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
-}
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     return [[UIView alloc]init];
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 30;
-}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
+//    [[XJPLayManager sharedInstance] addPlayObserver];
     [self.model getDataCompletionHandle:^(NSError *error) {
         NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
         userInfo[@"musicURL"] = [_model playURLForRow:indexPath.row];
@@ -136,7 +135,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     XJSongCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XJSongCell"];
     
-    [cell.coverMiddleImageView sd_setImageWithURL:[self.model coverMiddleForRow:indexPath.row] placeholderImage:[UIImage imageNamed:@"launchImage"] options:SDWebImageProgressiveDownload completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+    [cell.coverMiddleImageView sd_setImageWithURL:[self.model coverMiddleForRow:indexPath.row] placeholderImage:[UIImage imageNamed:@"music_placeholder"] options:SDWebImageProgressiveDownload completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
 
     }];
     cell.titleLabel.text = [self.model titleForRow:indexPath.row];

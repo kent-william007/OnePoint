@@ -34,14 +34,16 @@ static NSString *identifier = @"XJMyTableViewCell_id";
     }];
     _mTableview.delegate = self;
     _mTableview.dataSource = self;
+    _mTableview.rowHeight = 50;
     [_mTableview registerClass:[XJMyTableViewCell class] forCellReuseIdentifier:identifier];
     
-    cellContent_Array = @[@{@"imageName":@"turntable_64px",@"title":@"我的收藏"},
-                        @{@"imageName":@"compose_64px",@"title":@"播放历史"},
-                        @{@"imageName":@"gear_64px",@"title":@"清理缓存"},
-                        @{@"imageName":@"meter_64px",@"title":@"定时关机"},
-                        @{@"imageName":@"lightbulb_64px",@"title":@"关于OnePoint"},
-                        @{@"imageName":@"mail_64px",@"title":@"Content ME"}];
+    cellContent_Array = @[@{@"imageName":@"collectionMusic",@"title":@"我的收藏"},
+                        @{@"imageName":@"history",@"title":@"播放历史"},
+                       // @{@"imageName":@"cleanCache",@"title":@"清理缓存"},
+                        @{@"imageName":@"shutTime",@"title":@"定时关机"},
+                       // @{@"imageName":@"aboutMe",@"title":@"关于OnePoint"},
+                        //@{@"imageName":@"contantMe",@"title":@"Content ME"}
+                          ];
     
 }
 
@@ -59,15 +61,11 @@ static NSString *identifier = @"XJMyTableViewCell_id";
         vc.sourceType = DataSourceHistory;
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.row == 2){
-        
-    }else if (indexPath.row == 3){
         XJShutInTime *shutView = [[XJShutInTime alloc]initWithFrame:self.view.frame];
         [shutView show];
     }
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
-}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     XJMyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     cell.titleImageView.image = [UIImage imageNamed:cellContent_Array[indexPath.row][@"imageName"]];

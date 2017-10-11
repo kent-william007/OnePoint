@@ -39,13 +39,13 @@
     _mTableview = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     [self.view addSubview:_mTableview];
     [_mTableview mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.view).offset(20);
         make.top.leading.trailing.equalTo(self.view);
         make.bottom.equalTo(self.view).offset(-100);
     }];
     _mTableview.delegate = self;
     _mTableview.dataSource = self;
-    _mTableview.estimatedRowHeight = 100;
+    _mTableview.sectionFooterHeight = 10;
+    _mTableview.rowHeight = 80;
     _mTableview.tableHeaderView = [self tableViewHeader];
     [_mTableview registerClass:[XJRecommendViewCell class] forCellReuseIdentifier:@"XJRecommendViewCell"];
     
@@ -56,6 +56,7 @@
         weakSelf.cycleScrollView.imageURLStringsGroup = [self.model focusImgURLArray];
         [weakSelf dismissLoadingView];
     }];
+    
 }
 
 - (UIView *)tableViewHeader{
@@ -66,7 +67,6 @@
     
     [header addSubview:_cycleScrollView];
     [_cycleScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(header);
         make.top.equalTo(header).offset(12);
         make.leading.trailing.bottom.equalTo(header);
     }];
@@ -76,6 +76,16 @@
 
 #pragma mark -广告图点击
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    UIView *view = [[UIApplication sharedApplication].delegate window];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.userInteractionEnabled = NO;
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = @"正在开发中...";
+    hud.label.font = [UIFont systemFontOfSize:15];
+    hud.margin = 10.f;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hideAnimated:YES afterDelay:1];
+
     NSLog(@"%i",index);
 }
 
@@ -99,27 +109,20 @@
     }
     return 35;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 10;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80;
-}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     XJSongViewController *song = [[XJSongViewController alloc]initWithAlbumId:[self.model albumIdForIndexPath:indexPath]
                                                                         title:[self.model titleForRowAtIndexPath:indexPath]];
-//    song.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:song animated:NO];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     XJRecommendViewCell *cell = [[XJRecommendViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"XJRecommendViewCell"];
     if (indexPath.section == 0) {
-        [cell.hotRankIcon sd_setImageWithURL:[self.model coverURLForIndexPath:indexPath] placeholderImage:[UIImage imageNamed:@"avatar_bg"]];
+        [cell.hotRankIcon sd_setImageWithURL:[self.model coverURLForIndexPath:indexPath] placeholderImage:[UIImage imageNamed:@"music_placeholder"]];
         cell.hotRankLabel.text = [self.model titleForRowAtIndexPath:indexPath];
     }else{
-        [cell.coverIcon sd_setImageWithURL:[self.model coverURLForIndexPath:indexPath] placeholderImage:[UIImage imageNamed:@"avatar_bg"]];
+        [cell.coverIcon sd_setImageWithURL:[self.model coverURLForIndexPath:indexPath] placeholderImage:[UIImage imageNamed:@"music_placeholder"]];
         cell.titleLabel.text = [self.model titleForRowAtIndexPath:indexPath];
         cell.introLabel.text = [self.model introForRowAtIndexPath:indexPath];
         cell.playCountLabel.text = [self.model playCountForRowAtIndexPath:indexPath];
@@ -131,12 +134,7 @@
 #pragma mark -懒加载
 - (MoreContentViewModel *)model{
     if (!_model) {
-        NSString *contentType = @"album";
-        if (_contentType) {
-            contentType = _contentType;
-        }
-        
-        _model = [[MoreContentViewModel alloc]initWithCategoryId:2 contentType:contentType];
+        _model = [[MoreContentViewModel alloc]initWithCategoryId:2 contentType:@"album"];
     }
     return _model;
 }

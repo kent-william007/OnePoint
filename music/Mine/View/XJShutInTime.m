@@ -41,6 +41,8 @@ static NSString *cell_id = @"XJShutInTimeCell_id";
         timeArray = @[@"不启用",@"1分钟",@"20分钟",@"30分钟",@"40分钟",@"50分钟",@"60分钟",@"70分钟",@"80分钟",@"90分钟"];
         self.mTablview.delegate = self;
         self.mTablview.dataSource = self;
+        self.mTablview.rowHeight = cellHeight;
+        self.mTablview.sectionFooterHeight = footerHeight;
         //默认不选
         _selectIndex = -1;
 
@@ -129,9 +131,7 @@ static NSString *cell_id = @"XJShutInTimeCell_id";
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return cellHeight;
-}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return timeArray.count;
 }

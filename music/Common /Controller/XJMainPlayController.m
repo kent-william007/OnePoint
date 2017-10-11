@@ -60,7 +60,7 @@
 #pragma mark -要更新的UI
 - (void)updateUI{
     _mainPlayView.navLab.text = [[XJPLayManager sharedInstance] navTitle];
-    [_mainPlayView.bgImageView sd_setImageWithURL:[[XJPLayManager sharedInstance] playCoverLarge] placeholderImage:[UIImage imageNamed:@"music_placeholder"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+    [_mainPlayView.bgImageView sd_setImageWithURL:[[XJPLayManager sharedInstance] playCoverLarge] placeholderImage:[UIImage imageNamed:@"screen_placeholder"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
          [_mainPlayView.bgImageView startTransitionAnimation];
     }];
     [_mainPlayView.mainImageView sd_setImageWithURL:[[XJPLayManager sharedInstance] playCoverLarge] placeholderImage:[UIImage imageNamed:@"music_placeholder"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
@@ -91,6 +91,8 @@
     NSTimeInterval totalTime = NSTimeIntervalSince1970;
     if (!isnan(CMTimeGetSeconds([newItem duration]) )) {
         totalTime = CMTimeGetSeconds([newItem duration]);
+    }else{
+        totalTime = 0;
     }
     self.mainPlayView.starLab.text = [NSString timeIntervalToMMSSFormat:currentTime];
     self.mainPlayView.endLab.text = [NSString timeIntervalToMMSSFormat:totalTime];
