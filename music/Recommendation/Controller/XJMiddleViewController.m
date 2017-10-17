@@ -32,6 +32,8 @@ static NSString *cellID = @"XJBGCollectionViewCell";
 #pragma mark -LIFE CYCLE
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = [UIColor clearColor];
     _isFirst = YES;
     self.view.backgroundColor = [UIColor clearColor];
