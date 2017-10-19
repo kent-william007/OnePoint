@@ -635,8 +635,8 @@
 				TargetAttributes = {
 					37AC395B1F3DA0DB00A6A50F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = Y3A27ZK72R;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 8VYEXZB37H;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -890,14 +890,17 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = Y3A27ZK72R;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8VYEXZB37H;
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = music/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.music.me09108;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaodaye.onePoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "05fef99a-1981-41ca-900b-c597ee8b820c";
+				PROVISIONING_PROFILE_SPECIFIER = "commontest-development";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -909,15 +912,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = Y3A27ZK72R;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8VYEXZB37H;
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = music/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.music.me09108;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaodaye.onePoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0efa2f86-350c-4b8f-bf45-38c02ec59e7b";
+				PROVISIONING_PROFILE_SPECIFIER = XiaoDayeMusicDistribution;
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
