@@ -1,5 +1,5 @@
 # OnePoint
 
-This project used to be played with three gay.
+This project be used to play with three gays.
 
 stay focus and think different.
