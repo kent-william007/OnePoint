@@ -10,4 +10,5 @@
 
 @interface XJNetManager : NSObject
 + (id)GET:(NSString *)path paramaters:(NSDictionary *)params complationHandle:(void(^)(id responseObject,NSError *error))completed;
++ (void)cancelTask;
 @end

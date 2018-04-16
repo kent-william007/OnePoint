@@ -11,7 +11,7 @@
 #import "XJPLayManager.h"
 #import "UncaughtExceptionHandler.h"
 #import "XJPlayView.h"
-
+#import <BmobSDK/Bmob.h>
 
 @interface AppDelegate ()
 
@@ -21,10 +21,70 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Bmob registerWithAppKey:@"9282898b959b8b3790b48266568ca8bc"];
     [UncaughtExceptionHandler installUncaughtExceptionHandler:YES showAlert:YES];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[XJTabBarController alloc]init];
     [self.window makeKeyAndVisible];
+    
+    NSString * className = @"Found";
+    
+    BmobObject *obj = [[BmobObject alloc] initWithClassName:className];
+    
+    [obj setObject:@"你好" forKey:@"title"];
+    [obj setObject:@"13631524989" forKey:@"phone"];
+    [obj setObject:@"黑色iphone6" forKey:@"describe"];
+    
+    [obj saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+        
+        if (!error) {
+            NSLog(@"提交成功");
+            //[self performSelector:@selector(goback) withObject:nil afterDelay:0.7f];
+        }else{
+            UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:nil
+                                                                message:[[error userInfo] objectForKey:@"error"]
+                                                               delegate:nil
+                                                      cancelButtonTitle:nil
+                                                      otherButtonTitles:@"ok", nil];
+            [alertview show];
+        }
+        
+    }];
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        NSString *className = @"";
+        
+        //    if (_isFound) {
+        //        className = @"Found";
+        //    }else
+        className = @"Found";
+        
+//        BmobQuery *query = [BmobQuery queryWithClassName:className];
+//        [query orderByDescending:@"updatedAt"];
+//        query.limit = 20;
+//        [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+//            
+//            for (BmobObject *obj in array) {
+//                NSLog(@"%@",obj);
+//            }
+//        }];
+        
+
+    });
+    
+    BmobQuery *queryCheck = [BmobQuery queryWithClassName:@"CheckVersion"];
+    [queryCheck orderByDescending:@"updatedAt"];
+    queryCheck.limit = 20;
+    [queryCheck findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if(error){
+            NSLog(@"erroo_:%@",error);
+        }
+        for (BmobObject *obj in array) {
+            NSLog(@"%@",obj);
+        }
+    }];
+    
     return YES;
 }
 

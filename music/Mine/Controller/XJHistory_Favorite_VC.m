@@ -25,8 +25,21 @@
     
     _vModel = [[TracksViewModel alloc]initWithSourceType:self.sourceType];
     self.view.backgroundColor = [UIColor whiteColor];
-    [self initTalbeview];
+//    [self initTalbeview];
+    
+    [self addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionOld context:nil];
+ 
 }
+- (void)addObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context{
+    
+}
+- (void)dealloc{
+    NSLog(@"deallocc");
+}
+- (void)click{
+    NSLog(@"0923902309092390239032");
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     switch (self.sourceType) {
@@ -39,6 +52,17 @@
         default:
             break;
     }
+//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(noti:str:) name:@"name" object:@"12122121"];
+    
+//    [NSTimer timerWithTimeInterval:1 target:self selector:@selector(noti:str:) userInfo:@"abc" repeats:YES];
+    
+//    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(noti:str:) userInfo:@"abc" repeats:YES];
+    
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"name" object:nil];
+    __weak UIView *myview = [[UIView alloc]init];
+    [myview observationInfo];
 }
 
 #pragma mark -init TableView

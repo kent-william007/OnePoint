@@ -86,7 +86,7 @@
     hud.removeFromSuperViewOnHide = YES;
     [hud hideAnimated:YES afterDelay:1];
 
-    NSLog(@"%i",index);
+    //NSLog(@"%i",index);
 }
 
 #pragma mark -tableViewDelegate
@@ -113,6 +113,7 @@
     
     XJSongViewController *song = [[XJSongViewController alloc]initWithAlbumId:[self.model albumIdForIndexPath:indexPath]
                                                                         title:[self.model titleForRowAtIndexPath:indexPath]];
+    
     [self.navigationController pushViewController:song animated:NO];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

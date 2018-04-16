@@ -70,6 +70,17 @@
 		37E7DCB31F6C150500EE567B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E7DCB21F6C150500EE567B /* Images.xcassets */; };
 		37E9EA801F66EABD001819E5 /* SongsModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9EA7D1F66EABD001819E5 /* SongsModel+CoreDataProperties.m */; };
 		37E9EA811F66EABD001819E5 /* SongsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9EA7F1F66EABD001819E5 /* SongsModel.m */; };
+		37F7AB491F9BA3D300F32AF0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F7AB481F9BA3D300F32AF0 /* CoreLocation.framework */; };
+		37F7AB4B1F9BA3FA00F32AF0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F7AB4A1F9BA3FA00F32AF0 /* Security.framework */; };
+		37F7AB4D1F9BA40700F32AF0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F7AB4C1F9BA40700F32AF0 /* CoreGraphics.framework */; };
+		37F7AB4F1F9BA41600F32AF0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F7AB4E1F9BA41600F32AF0 /* MobileCoreServices.framework */; };
+		37F7AB511F9BA42600F32AF0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F7AB501F9BA42600F32AF0 /* CFNetwork.framework */; };
+		37F7AB531F9BA43200F32AF0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F7AB521F9BA43200F32AF0 /* CoreTelephony.framework */; };
+		37F7AB551F9BA43F00F32AF0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F7AB541F9BA43F00F32AF0 /* SystemConfiguration.framework */; };
+		37F7AB571F9BA44B00F32AF0 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F7AB561F9BA44B00F32AF0 /* libz.1.2.5.tbd */; };
+		37F7AB591F9BA45700F32AF0 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F7AB581F9BA45700F32AF0 /* libicucore.tbd */; };
+		37F7AB5B1F9BA46400F32AF0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F7AB5A1F9BA46400F32AF0 /* libsqlite3.tbd */; };
+		37F7AB5D1F9BA47100F32AF0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F7AB5C1F9BA47100F32AF0 /* libc++.tbd */; };
 		BE279A87A507F140AA47A522 /* libPods-music.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD4EC54D93F28F4E604D864 /* libPods-music.a */; };
 /* End PBXBuildFile section */
 
@@ -194,6 +205,7 @@
 		37D755CF1F68396300C2FCED /* XJRecommendSectionTItle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRecommendSectionTItle.m; sourceTree = "<group>"; };
 		37D755D01F68396300C2FCED /* XJRecommendViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJRecommendViewCell.h; sourceTree = "<group>"; };
 		37D755D11F68396300C2FCED /* XJRecommendViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJRecommendViewCell.m; sourceTree = "<group>"; };
+		37DF387C1FD31F3A00D51C75 /* XJBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XJBaseClass.h; path = ../../MusicLibrary/Controller/XJBaseClass.h; sourceTree = "<group>"; };
 		37E7DCAF1F6BF64D00EE567B /* XJProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XJProgressView.h; path = "music/Common /View/XJProgressView.h"; sourceTree = SOURCE_ROOT; };
 		37E7DCB01F6BF64D00EE567B /* XJProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XJProgressView.m; path = "music/Common /View/XJProgressView.m"; sourceTree = SOURCE_ROOT; };
 		37E7DCB21F6C150500EE567B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -201,6 +213,17 @@
 		37E9EA7D1F66EABD001819E5 /* SongsModel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SongsModel+CoreDataProperties.m"; sourceTree = "<group>"; };
 		37E9EA7E1F66EABD001819E5 /* SongsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsModel.h; sourceTree = "<group>"; };
 		37E9EA7F1F66EABD001819E5 /* SongsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongsModel.m; sourceTree = "<group>"; };
+		37F7AB481F9BA3D300F32AF0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		37F7AB4A1F9BA3FA00F32AF0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		37F7AB4C1F9BA40700F32AF0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		37F7AB4E1F9BA41600F32AF0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		37F7AB501F9BA42600F32AF0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		37F7AB521F9BA43200F32AF0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		37F7AB541F9BA43F00F32AF0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		37F7AB561F9BA44B00F32AF0 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		37F7AB581F9BA45700F32AF0 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		37F7AB5A1F9BA46400F32AF0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		37F7AB5C1F9BA47100F32AF0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		4FD4EC54D93F28F4E604D864 /* libPods-music.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-music.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF491263D24B50AB541683E /* Pods-music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-music.release.xcconfig"; path = "Pods/Target Support Files/Pods-music/Pods-music.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +233,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F7AB5D1F9BA47100F32AF0 /* libc++.tbd in Frameworks */,
+				37F7AB5B1F9BA46400F32AF0 /* libsqlite3.tbd in Frameworks */,
+				37F7AB591F9BA45700F32AF0 /* libicucore.tbd in Frameworks */,
+				37F7AB571F9BA44B00F32AF0 /* libz.1.2.5.tbd in Frameworks */,
+				37F7AB551F9BA43F00F32AF0 /* SystemConfiguration.framework in Frameworks */,
+				37F7AB531F9BA43200F32AF0 /* CoreTelephony.framework in Frameworks */,
+				37F7AB511F9BA42600F32AF0 /* CFNetwork.framework in Frameworks */,
+				37F7AB4F1F9BA41600F32AF0 /* MobileCoreServices.framework in Frameworks */,
+				37F7AB4D1F9BA40700F32AF0 /* CoreGraphics.framework in Frameworks */,
+				37F7AB4B1F9BA3FA00F32AF0 /* Security.framework in Frameworks */,
+				37F7AB491F9BA3D300F32AF0 /* CoreLocation.framework in Frameworks */,
 				BE279A87A507F140AA47A522 /* libPods-music.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +442,7 @@
 		37B3741E1F61A2B200E8BA76 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				37DF387C1FD31F3A00D51C75 /* XJBaseClass.h */,
 				37B3741F1F61A2B200E8BA76 /* XJPLayManager.h */,
 				37B374201F61A2B200E8BA76 /* XJPLayManager.m */,
 			);
@@ -594,6 +629,17 @@
 		C80C6B8F3B8F7703347B6A2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37F7AB5C1F9BA47100F32AF0 /* libc++.tbd */,
+				37F7AB5A1F9BA46400F32AF0 /* libsqlite3.tbd */,
+				37F7AB581F9BA45700F32AF0 /* libicucore.tbd */,
+				37F7AB561F9BA44B00F32AF0 /* libz.1.2.5.tbd */,
+				37F7AB541F9BA43F00F32AF0 /* SystemConfiguration.framework */,
+				37F7AB521F9BA43200F32AF0 /* CoreTelephony.framework */,
+				37F7AB501F9BA42600F32AF0 /* CFNetwork.framework */,
+				37F7AB4E1F9BA41600F32AF0 /* MobileCoreServices.framework */,
+				37F7AB4C1F9BA40700F32AF0 /* CoreGraphics.framework */,
+				37F7AB4A1F9BA3FA00F32AF0 /* Security.framework */,
+				37F7AB481F9BA3D300F32AF0 /* CoreLocation.framework */,
 				37ADB7351F3EEB890063F493 /* PrefixHeader.pch */,
 				37556E761F586E8B00B65CFB /* MacroHeader.h */,
 				4FD4EC54D93F28F4E604D864 /* libPods-music.a */,
@@ -635,7 +681,7 @@
 				TargetAttributes = {
 					37AC395B1F3DA0DB00A6A50F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = Y3A27ZK72R;
+						DevelopmentTeam = RFZJD85NQW;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -678,9 +724,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-music/Pods-music-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -708,13 +758,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-music-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -890,14 +943,20 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = Y3A27ZK72R;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RFZJD85NQW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/music/OtherLib",
+				);
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = music/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.music.me09108;
+				PRODUCT_BUNDLE_IDENTIFIER = RFZJD85NQW.cn.com.XCWildcardn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -910,14 +969,20 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = Y3A27ZK72R;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RFZJD85NQW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/music/OtherLib",
+				);
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = music/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.music.me09108;
+				PRODUCT_BUNDLE_IDENTIFIER = RFZJD85NQW.cn.com.XCWildcardn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;

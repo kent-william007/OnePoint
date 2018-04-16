@@ -25,7 +25,10 @@
 
 /**获取主页，不同风格音乐*/
 + (id)getTracksForMuisc:(NSInteger)modelId completionHandle:(void (^)(id, NSError *))completed{
-    NSString *path = [NSString stringWithFormat:@"http://o8yhyhsyd.bkt.clouddn.com/musicAlbum.json"];
+//    NSString *path = [NSString stringWithFormat:@"http://o8yhyhsyd.bkt.clouddn.com/musicAlbum.json"];
+    NSString *path = [NSString stringWithFormat:@"http://www.ximalaya.com/dq/all/"];
+
+
     return  [self GET:path paramaters:nil complationHandle:^(id responseObject, NSError *error) {
 
         if (responseObject) {
@@ -63,8 +66,16 @@
     //  NSString *tagName = [name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];//网址转化
     NSDictionary *params = @{@"categoryId":@(categoryId),@"pageSize":@(size),@"tagName":name, kURLPageID,kURLDevice,kURLStatus,kURLCalcDimension};
     return [self GET:@"http://mobile.ximalaya.com/mobile/discovery/v1/category/album" paramaters:params complationHandle:^(id responseObject, NSError *error) {
-        completed([XJMLibraryModel mj_objectWithKeyValues:responseObject],nil);
+        if (error) {
+            
+        }else{
+           completed([XJMLibraryModel mj_objectWithKeyValues:responseObject],nil);
+        }
     }];
+}
+
++ (void)cancelTask{
+    
 }
 
 @end

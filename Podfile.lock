@@ -29,6 +29,8 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - BmobSDK (2.2.3):
+    - WechatOpenSDK (~> 1.7.7)
   - KVOController (1.2.0)
   - Mantle (2.1.0):
     - Mantle/extobjc (= 2.1.0)
@@ -47,10 +49,12 @@ PODS:
   - UITableView+FDTemplateLayoutCell (1.6)
   - UMengAnalytics (4.2.4)
   - WebViewJavascriptBridge (6.0.2)
+  - WechatOpenSDK (1.7.9)
 
 DEPENDENCIES:
   - AFNetworking
   - BlocksKit
+  - BmobSDK
   - KVOController
   - Mantle
   - Masonry (~> 1.0.2)
@@ -68,6 +72,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  BmobSDK: dd61cf835d063303fb53b29465fcb3e9718b36f2
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
@@ -81,7 +86,8 @@ SPEC CHECKSUMS:
   UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
+  WechatOpenSDK: 1fe7e3b07db860d6a936c3ff4a5aba6b890958d9
 
-PODFILE CHECKSUM: 026b5fff0c252778dbbf76b9c23f05eb4117aa6d
+PODFILE CHECKSUM: 17fe55b5d086126a94412a29608e4b79d31f1640
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.4.0.beta.1

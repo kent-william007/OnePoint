@@ -8,7 +8,7 @@
 
 #import "XJSuperViewController.h"
 #import "AppDelegate.h"
-
+#import "XJNetManager.h"
 
 @interface XJSuperViewController()
 @property(nonatomic,strong)UIImageView *loadImageV;
@@ -35,6 +35,7 @@
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
 //    [self dismissLoadingView];
+    [XJNetManager cancelTask];
 }
 
 - (void)transitionAnimation{

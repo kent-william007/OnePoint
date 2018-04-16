@@ -15,5 +15,6 @@ target 'music' do
  pod 'WebViewJavascriptBridge'
  pod 'SDCycleScrollView'
  pod 'UITableView+FDTemplateLayoutCell'
+ pod 'BmobSDK'
 end
 

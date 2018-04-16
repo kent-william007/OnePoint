@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface XJMainPlayController : UIViewController
+#import "XJSuperViewController.h"
+@interface XJMainPlayController : XJSuperViewController
 
 @end

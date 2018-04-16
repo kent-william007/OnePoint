@@ -70,7 +70,7 @@ static NSString *identifier = @"XJMyTableViewCell_id";
     XJMyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     cell.titleImageView.image = [UIImage imageNamed:cellContent_Array[indexPath.row][@"imageName"]];
     cell.titleLabel.text = cellContent_Array[indexPath.row][@"title"];
-    if (indexPath.row == 3) {
+    if (indexPath.row == 2) {
         [XJCountTimer displayTime:^(NSString *displaytime) {
             cell.mdetailLabel.text = displaytime;
         }];

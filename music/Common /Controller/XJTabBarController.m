@@ -82,38 +82,40 @@
         itemVC.tabBarItem.image = [UIImage imageNamed:imageName];
         itemVC.tabBarItem.selectedImage = [UIImage imageNamed:selectImageName];
     }
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:itemVC];
-    nav.navigationBar.backgroundColor = [UIColor blackColor];
-    nav.delegate = self;
+    XJNavigationController *nav = [[XJNavigationController alloc]initWithRootViewController:itemVC];
+//    nav.navigationBar.backgroundColor = [UIColor blackColor];
+//    nav.delegate = self;
     [self addChildViewController:nav];
 }
 
 
-- (void)navigationController:(UINavigationController *)navigationController
-      willShowViewController:(UIViewController *)viewController
-                    animated:(BOOL)animated{
-    
-    if (navigationController.viewControllers[0] == viewController) {
-        if(self.tabBar.frame.origin.y != [[UIScreen mainScreen] bounds].size.height - 49){
-            [UIView animateWithDuration:0.2
-                             animations:^{
-                        CGRect tabFrame = self.tabBar.frame;
-                     tabFrame.origin.y += -49;
-                      self.tabBar.frame = tabFrame;
-            }];
-        }
-    }else{
-        if(self.tabBar.frame.origin.y == [[UIScreen mainScreen] bounds].size.height - 49){
-            [UIView animateWithDuration:0.8
-                             animations:^{
-                        CGRect tabFrame = self.tabBar.frame;
-                      tabFrame.origin.y = [[UIScreen mainScreen] bounds].size.height;
-                      self.tabBar.frame = tabFrame;
-            }];
-        }
-    }
-}
-
+//- (void)navigationController:(UINavigationController *)navigationController
+//      willShowViewController:(UIViewController *)viewController
+//                    animated:(BOOL)animated{
+//    
+//}
+//- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+//    if (navigationController.viewControllers[0] == viewController) {
+//        if(self.tabBar.frame.origin.y != [[UIScreen mainScreen] bounds].size.height - 49){
+//            [UIView animateWithDuration:0.2
+//                             animations:^{
+//                                 CGRect tabFrame = self.tabBar.frame;
+//                                 tabFrame.origin.y += -49;
+//                                 self.tabBar.frame = tabFrame;
+//                             }];
+//        }
+//    }else{
+//        if(self.tabBar.frame.origin.y == [[UIScreen mainScreen] bounds].size.height - 49){
+//            [UIView animateWithDuration:0.8
+//                             animations:^{
+//                                 CGRect tabFrame = self.tabBar.frame;
+//                                 tabFrame.origin.y = [[UIScreen mainScreen] bounds].size.height;
+//                                 self.tabBar.frame = tabFrame;
+//                             }];
+//        }
+//    }
+//
+//}
 
 #pragma mark -隐藏TabBar上面的线
 - (void)hideTabBarTopLine{
