@@ -84,7 +84,7 @@
                   moduleName = "music"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kent/XJMusic/music/HomePage/Model/MoreContentViewModel.m"
-                  timestampString = "545542781.879388"
+                  timestampString = "545545662.443323"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
@@ -99,7 +99,7 @@
                   moduleName = "music"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kent/XJMusic/music/HomePage/Model/MoreContentViewModel.m"
-                  timestampString = "545542781.887208"
+                  timestampString = "545545662.447894"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "38"
@@ -132,7 +132,7 @@
                   moduleName = "music"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kent/XJMusic/music/common%20/NetManager/XJMoreNetManager.m"
-                  timestampString = "545542781.900045"
+                  timestampString = "545545662.455721"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "56"
@@ -147,7 +147,7 @@
                   moduleName = "music"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kent/XJMusic/music/common%20/NetManager/XJMoreNetManager.m"
-                  timestampString = "545542781.903118"
+                  timestampString = "545545662.458755"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "57"
@@ -187,6 +187,38 @@
             endingLineNumber = "37"
             landmarkName = "+GET:paramaters:complationHandle:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.37"
+                  moduleName = "music"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kent/XJMusic/music/common%20/NetManager/XJNetManager.m"
+                  timestampString = "545545662.476299"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.38"
+                  moduleName = "music"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kent/XJMusic/music/common%20/NetManager/XJNetManager.m"
+                  timestampString = "545545662.480185"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -203,6 +235,68 @@
             endingLineNumber = "32"
             landmarkName = "+GET:paramaters:complationHandle:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[XJNetManager GET:paramaters:complationHandle:]"
+                  moduleName = "music"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kent/XJMusic/music/common%20/NetManager/XJNetManager.m"
+                  timestampString = "545545662.490038"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_"
+                  moduleName = "music"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kent/XJMusic/music/common%20/NetManager/XJNetManager.m"
+                  timestampString = "545545662.4935499"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_"
+                  moduleName = "music"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kent/XJMusic/music/common%20/NetManager/XJNetManager.m"
+                  timestampString = "545545662.498754"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48+[XJNetManager GET:paramaters:complationHandle:]_block_invoke.34"
+                  moduleName = "music"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kent/XJMusic/music/common%20/NetManager/XJNetManager.m"
+                  timestampString = "545545662.5021141"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "14">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -216,9 +310,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "+dictionaryToJson:"
-            landmarkType = "7">
+            endingLineNumber = "77">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
