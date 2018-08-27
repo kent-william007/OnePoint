@@ -16,6 +16,7 @@
     void(^c_hideBlock)();
     void(^c_moreInfoBlock)();
 }
+
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         [self initUI];

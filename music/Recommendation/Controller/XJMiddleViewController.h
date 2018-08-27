@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface XJMiddleViewController : UIViewController
+#import "XJSuperViewController.h"
+@interface XJMiddleViewController : XJSuperViewController
 
 @end

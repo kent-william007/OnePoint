@@ -17,6 +17,7 @@
     dispatch_once(&onceToken,^{
         manager = [AFHTTPSessionManager manager];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"text/plain",@"text/javascript",@"application/json", nil];
+        manager.requestSerializer.timeoutInterval = 10;
         
     });
     return manager;
@@ -30,6 +31,7 @@
        [self dictionaryToJson:responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [XJProgressView dismiss];
+
         NSLog(@"ErrorMessage:%@",error);
        completed(nil,error);
     }];
@@ -45,6 +47,9 @@
     NSLog(@"%@",abc);
     return abc;
     
+}
++ (void)cancelTask{
+    [[XJNetManager defaultManager].tasks makeObjectsPerformSelector:@selector(cancel)];
 }
 
 

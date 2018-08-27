@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XJSuperViewController.h"
 
-@interface XJMLibraryDetailVC : UIViewController
+@interface XJMLibraryDetailVC : XJSuperViewController
 @property(nonatomic,copy)NSString *contentType;
 @end
